@@ -1453,6 +1453,310 @@ RESPONSIVE
         font-size:30px;
     }
 }
+
+    /* =========================================================
+🔥 AAA LOAD ANIMATIONS
+PEGA ESTO AL FINAL DEL STYLE
+========================================================= */
+
+
+/* =========================================================
+INITIAL HIDDEN
+========================================================= */
+
+.floatingNav,
+.logoRow,
+.tags,
+.heroTitle,
+.heroText,
+.heroButtons,
+.videoCard{
+
+    opacity:0;
+}
+
+
+/* =========================================================
+NAVBAR
+========================================================= */
+
+.floatingNav{
+
+    animation:
+    navReveal 1s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation-delay:.1s;
+}
+
+
+/* =========================================================
+LOGO
+========================================================= */
+
+.logoRow{
+
+    animation:
+    revealFadeUp 1s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation-delay:.35s;
+}
+
+
+/* =========================================================
+TAGS
+========================================================= */
+
+.tags{
+
+    animation:
+    revealFadeUp 1s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation-delay:.55s;
+}
+
+
+/* =========================================================
+TITLE
+========================================================= */
+
+.heroTitle{
+
+    animation:
+    titleReveal 1.4s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation-delay:.8s;
+}
+
+
+/* =========================================================
+TEXT
+========================================================= */
+
+.heroText{
+
+    animation:
+    revealFadeUp 1s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation-delay:1.15s;
+}
+
+
+/* =========================================================
+BUTTONS
+========================================================= */
+
+.heroButtons{
+
+    animation:
+    revealFadeUp 1s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation-delay:1.35s;
+}
+
+
+/* =========================================================
+VIDEO
+========================================================= */
+
+.videoCard{
+
+    animation:
+    cinematicReveal 1.8s cubic-bezier(.22,1,.36,1) forwards;
+
+    animation-delay:1s;
+}
+
+
+/* =========================================================
+NAV REVEAL
+========================================================= */
+
+@keyframes navReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateX(-50%)
+        translateY(-40px)
+        scale(.9);
+
+        filter:
+        blur(12px);
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateX(-50%)
+        translateY(0)
+        scale(1);
+
+        filter:
+        blur(0);
+    }
+}
+
+
+/* =========================================================
+FADE UP
+========================================================= */
+
+@keyframes revealFadeUp{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateY(60px);
+
+        filter:
+        blur(18px);
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+        filter:
+        blur(0);
+    }
+}
+
+
+/* =========================================================
+TITLE REVEAL
+========================================================= */
+
+@keyframes titleReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateY(80px)
+        scale(.94);
+
+        letter-spacing:
+        -15px;
+
+        filter:
+        blur(20px);
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+        letter-spacing:
+        -7px;
+
+        filter:
+        blur(0);
+    }
+}
+
+
+/* =========================================================
+VIDEO REVEAL
+========================================================= */
+
+@keyframes cinematicReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateX(120px)
+        scale(.85)
+        rotate(2deg);
+
+        filter:
+        blur(25px);
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateX(0)
+        scale(1)
+        rotate(0);
+
+        filter:
+        blur(0);
+    }
+}
+
+
+/* =========================================================
+PAGE OPEN FX
+========================================================= */
+
+.page.active .pageTitle{
+
+    animation:
+    revealFadeUp .8s cubic-bezier(.22,1,.36,1);
+}
+
+.page.active .pageSub{
+
+    animation:
+    revealFadeUp 1s cubic-bezier(.22,1,.36,1);
+}
+
+.page.active .conceptCard,
+.page.active .subContentCard{
+
+    animation:
+    cardReveal .9s cubic-bezier(.22,1,.36,1);
+}
+
+
+/* =========================================================
+CARD REVEAL
+========================================================= */
+
+@keyframes cardReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateY(50px)
+        scale(.96);
+
+        filter:
+        blur(15px);
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+        filter:
+        blur(0);
+    }
+}
 </style>
 
 </head>
