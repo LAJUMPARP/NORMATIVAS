@@ -1106,7 +1106,231 @@ RESPONSIVE
         140px 20px 80px;
     }
 }
+/* =========================================================
+🔥 WEBSITE INTRO ANIMATION
+========================================================= */
 
+body{
+
+    animation:
+    websiteReveal 1.4s cubic-bezier(.22,1,.36,1);
+}
+
+
+/* =========================================================
+MAIN REVEAL
+========================================================= */
+
+@keyframes websiteReveal{
+
+    0%{
+
+        opacity:0;
+
+        filter:
+        blur(16px);
+
+        transform:
+        scale(1.03);
+    }
+
+    100%{
+
+        opacity:1;
+
+        filter:
+        blur(0);
+
+        transform:
+        scale(1);
+    }
+}
+
+
+/* =========================================================
+NAVBAR INTRO
+========================================================= */
+
+.floatingNav{
+
+    animation:
+    navReveal 1s cubic-bezier(.22,1,.36,1);
+}
+
+@keyframes navReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateX(-50%)
+        translateY(-40px);
+
+        filter:
+        blur(10px);
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateX(-50%)
+        translateY(0);
+
+        filter:
+        blur(0);
+    }
+}
+
+
+/* =========================================================
+HERO LEFT
+========================================================= */
+
+.heroLeft{
+
+    animation:
+    heroLeftReveal 1.2s cubic-bezier(.22,1,.36,1);
+}
+
+@keyframes heroLeftReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateX(-60px);
+
+        filter:
+        blur(12px);
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateX(0);
+
+        filter:
+        blur(0);
+    }
+}
+
+
+/* =========================================================
+VIDEO INTRO
+========================================================= */
+
+.videoCard{
+
+    animation:
+    videoReveal 1.4s cubic-bezier(.22,1,.36,1);
+}
+
+@keyframes videoReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateX(80px)
+        scale(.94);
+
+        filter:
+        blur(18px);
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateX(0)
+        scale(1);
+
+        filter:
+        blur(0);
+    }
+}
+
+
+/* =========================================================
+TITLE GLOW PULSE
+========================================================= */
+
+.heroTitle span{
+
+    animation:
+    titleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titleGlow{
+
+    0%{
+
+        filter:
+        drop-shadow(0 0 15px rgba(255,122,133,.12));
+    }
+
+    50%{
+
+        filter:
+        drop-shadow(0 0 35px rgba(255,122,133,.35));
+    }
+
+    100%{
+
+        filter:
+        drop-shadow(0 0 15px rgba(255,122,133,.12));
+    }
+}
+
+
+/* =========================================================
+BUTTONS STAGGER
+========================================================= */
+
+.heroButtons .btn:nth-child(1){
+
+    animation:
+    btnReveal 1.2s .2s both cubic-bezier(.22,1,.36,1);
+}
+
+.heroButtons .btn:nth-child(2){
+
+    animation:
+    btnReveal 1.2s .35s both cubic-bezier(.22,1,.36,1);
+}
+
+@keyframes btnReveal{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateY(25px);
+
+        filter:
+        blur(10px);
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+        filter:
+        blur(0);
+    }
+}
 </style>
 
 </head>
