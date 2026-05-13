@@ -1564,17 +1564,18 @@ El desconocimiento de las normas no exime de sanción.
 
 <div class="heroButtons">
 
-<a href="https://discord.gg/" target="_blank">
-
-<button class="btn btnPrimary">
+<a
+href="https://discord.gg/"
+target="_blank"
+class="btn btnPrimary">
 
 Entrar al Discord
 
-</button>
-
 </a>
 
-<button class="btn btnGhost" onclick="openPage('conceptosPage')">
+<button
+class="btn btnGhost"
+onclick="document.getElementById('conceptosPage').classList.add('active')">
 
 Ver Normativas
 
@@ -3971,7 +3972,20 @@ CIERRE PAGES SYSTEM
 </div>
 
 <script>
+function openPage(pageId){
 
+    document
+    .querySelectorAll('.page')
+    .forEach(page => {
+
+        page.classList.remove('active');
+
+    });
+
+    document
+    .getElementById(pageId)
+    .classList.add('active');
+}
 /* =========================================================
 PAGES SYSTEM
 ========================================================= */
