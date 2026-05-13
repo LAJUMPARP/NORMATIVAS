@@ -3,8 +3,8 @@
 
 <head>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>LA JUMPA RP — Normativas</title>
 
@@ -15,7 +15,7 @@
 <style>
 
 /* =========================================================
-🔥 LA JUMPA RP — ULTRA PREMIUM UI
+🔥 LA JUMPA RP — ULTRA PREMIUM WEBSITE
 ========================================================= */
 
 :root{
@@ -24,7 +24,7 @@
     --primary2:#ff9ea6;
 
     --bg:#050505;
-    --bg2:#0d0d0d;
+    --bg2:#0c0c0c;
 
     --card:rgba(12,12,12,.94);
 
@@ -622,78 +622,96 @@ VIDEO CARD
 
 
 /* =========================================================
-WINDOWS CONTAINER
+PAGES SYSTEM
 ========================================================= */
 
-.windowsContainer{
+.pagesSystem{
 
-    position:relative;
+    position:fixed;
 
-    z-index:10;
+    inset:0;
 
-    max-width:1450px;
+    z-index:500;
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+PAGE
+========================================================= */
+
+.page{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow-y:auto;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+    scale(1.05);
+
+    transition:
+    opacity .45s ease,
+    transform .45s ease,
+    visibility .45s;
+
+    padding:
+    160px 40px 80px;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,122,133,.08),
+    transparent 30%),
+
+    linear-gradient(180deg,
+    rgba(6,6,6,.98),
+    rgba(8,8,8,1));
+
+    backdrop-filter:
+    blur(20px);
+}
+
+.page.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+    scale(1);
+
+    pointer-events:auto;
+}
+
+
+/* =========================================================
+PAGE CONTENT
+========================================================= */
+
+.pageContent{
+
+    max-width:1400px;
 
     margin:auto;
 
-    padding:
-    0 30px 120px;
-}
-
-
-/* =========================================================
-WINDOW
-========================================================= */
-
-.floatingWindow{
-
-    position:relative;
-
-    display:none;
-
     animation:
-    premiumWindow .45s cubic-bezier(.22,1,.36,1);
-
-    margin-top:40px;
-
-    background:
-    linear-gradient(180deg,
-    rgba(14,14,14,.96),
-    rgba(8,8,8,.98));
-
-    border:
-    1px solid rgba(255,122,133,.12);
-
-    border-radius:34px;
-
-    overflow:hidden;
-
-    padding:34px;
-
-    box-shadow:
-    0 0 0 1px rgba(255,122,133,.04),
-    0 20px 60px rgba(0,0,0,.45),
-    0 0 60px rgba(255,122,133,.08);
+    premiumPage .55s cubic-bezier(.22,1,.36,1);
 }
 
-.floatingWindow.active{
-
-    display:block;
-}
-
-
-/* =========================================================
-WINDOW OPEN EFFECT
-========================================================= */
-
-@keyframes premiumWindow{
+@keyframes premiumPage{
 
     0%{
 
         opacity:0;
 
         transform:
-        translateY(40px)
-        scale(.96);
+        translateY(30px);
 
         filter:blur(10px);
     }
@@ -703,8 +721,7 @@ WINDOW OPEN EFFECT
         opacity:1;
 
         transform:
-        translateY(0)
-        scale(1);
+        translateY(0);
 
         filter:blur(0);
     }
@@ -712,28 +729,37 @@ WINDOW OPEN EFFECT
 
 
 /* =========================================================
-HEADER
+PAGE TITLE
 ========================================================= */
 
-.windowHeader{
+.pageTitle{
 
-    margin-bottom:34px;
-}
-
-.windowHeader h2{
-
-    font-size:54px;
+    font-size:72px;
 
     font-weight:900;
 
-    margin-bottom:10px;
+    margin-bottom:14px;
+
+    letter-spacing:-3px;
 }
 
-.windowHeader p{
+.pageSub{
 
     color:rgba(255,255,255,.65);
 
-    font-size:17px;
+    margin-bottom:40px;
+
+    font-size:18px;
+}
+
+
+/* =========================================================
+BACK BUTTON
+========================================================= */
+
+.backButton{
+
+    margin-bottom:30px;
 }
 
 
@@ -741,7 +767,7 @@ HEADER
 GRID
 ========================================================= */
 
-.windowGrid{
+.pageGrid{
 
     display:grid;
 
@@ -753,29 +779,31 @@ GRID
 
 
 /* =========================================================
-WINDOW CARD
+CARD
 ========================================================= */
 
-.windowCard{
+.pageCard{
 
     position:relative;
 
     overflow:hidden;
 
-    padding:28px;
-
-    border-radius:28px;
+    border-radius:30px;
 
     background:
-    rgba(255,255,255,.02);
+    linear-gradient(180deg,
+    rgba(16,16,16,.95),
+    rgba(10,10,10,.98));
 
     border:
-    1px solid rgba(255,122,133,.10);
+    1px solid rgba(255,122,133,.12);
 
-    transition:.3s ease;
+    padding:30px;
+
+    transition:.35s ease;
 }
 
-.windowCard::before{
+.pageCard::before{
 
     content:"";
 
@@ -793,50 +821,47 @@ WINDOW CARD
     #ff7a85,
     transparent);
 
-    transition:.4s ease;
+    transition:.45s ease;
 }
 
-.windowCard:hover{
+.pageCard:hover{
 
     transform:
-    translateY(-4px);
-
-    background:
-    rgba(255,122,133,.05);
+    translateY(-5px);
 
     border:
-    1px solid rgba(255,122,133,.22);
+    1px solid rgba(255,122,133,.24);
 
     box-shadow:
-    0 0 40px rgba(255,122,133,.10);
+    0 0 45px rgba(255,122,133,.12);
 }
 
-.windowCard:hover::before{
+.pageCard:hover::before{
 
     left:0;
 }
 
-.windowCard h3{
+.pageCard h3{
 
-    font-size:24px;
-    font-weight:800;
+    font-size:30px;
 
-    margin-bottom:12px;
+    margin-bottom:18px;
 }
 
-.windowCard p{
+.pageCard p,
+.pageCard li{
 
-    color:var(--text2);
+    color:rgba(255,255,255,.68);
 
     line-height:1.8;
 }
 
 
 /* =========================================================
-PREMIUM ACCORDION
+ACCORDION
 ========================================================= */
 
-.premiumAccordion{
+.pageAccordion{
 
     display:flex;
     flex-direction:column;
@@ -844,36 +869,31 @@ PREMIUM ACCORDION
     gap:18px;
 }
 
-.premiumItem{
+.pageItem{
 
     overflow:hidden;
 
-    border-radius:26px;
-
-    border:
-    1px solid rgba(255,122,133,.10);
+    border-radius:24px;
 
     background:
     rgba(255,255,255,.02);
 
+    border:
+    1px solid rgba(255,122,133,.10);
+
     transition:.3s ease;
 }
 
-.premiumItem.active{
+.pageItem.active{
 
     border:
-    1px solid rgba(255,122,133,.22);
+    1px solid rgba(255,122,133,.20);
 
     box-shadow:
-    0 0 40px rgba(255,122,133,.08);
+    0 0 35px rgba(255,122,133,.08);
 }
 
-
-/* =========================================================
-ACCORDION BUTTON
-========================================================= */
-
-.premiumToggle{
+.pageToggle{
 
     position:relative;
 
@@ -884,7 +904,9 @@ ACCORDION BUTTON
 
     cursor:pointer;
 
-    overflow:hidden;
+    background:transparent;
+
+    color:white;
 
     padding:
     24px 28px;
@@ -893,15 +915,11 @@ ACCORDION BUTTON
     align-items:center;
     justify-content:space-between;
 
-    background:transparent;
-
-    color:white;
-
     font-size:20px;
     font-weight:800;
 }
 
-.premiumToggle::before{
+.pageToggle::before{
 
     content:"";
 
@@ -922,62 +940,23 @@ ACCORDION BUTTON
     transition:.4s ease;
 }
 
-.premiumItem:hover .premiumToggle::before{
+.pageItem:hover .pageToggle::before{
 
     left:0;
 }
 
-
-/* =========================================================
-PLUS ICON
-========================================================= */
-
-.plusIcon{
-
-    width:44px;
-    height:44px;
-
-    border-radius:14px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-    rgba(255,122,133,.08);
-
-    border:
-    1px solid rgba(255,122,133,.16);
-
-    transition:.3s ease;
-}
-
-.premiumItem.active .plusIcon{
-
-    transform:
-    rotate(45deg);
-
-    background:
-    rgba(255,122,133,.18);
-}
-
-
-/* =========================================================
-CONTENT
-========================================================= */
-
-.premiumContent{
+.pageContentBox{
 
     max-height:0;
 
     overflow:hidden;
 
     transition:
-    max-height .45s cubic-bezier(.22,1,.36,1),
+    max-height .45s ease,
     padding .35s ease;
 }
 
-.premiumItem.active .premiumContent{
+.pageItem.active .pageContentBox{
 
     max-height:500px;
 
@@ -985,77 +964,19 @@ CONTENT
     0 28px 28px;
 }
 
-.premiumContent p,
-.premiumContent li{
+.pageContentBox p,
+.pageContentBox li{
 
-    color:var(--text2);
+    color:rgba(255,255,255,.68);
 
     line-height:1.8;
 }
 
-.premiumContent ul{
+.pageContentBox ul{
 
     padding-left:18px;
 
     margin-top:16px;
-}
-
-.premiumContent li{
-
-    margin-bottom:12px;
-}
-
-
-/* =========================================================
-FADE EFFECT
-========================================================= */
-
-.premiumContent p,
-.premiumContent li{
-
-    animation:
-    fadeUp .45s ease;
-}
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(10px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
-    }
-}
-
-
-/* =========================================================
-FOOTER
-========================================================= */
-
-footer{
-
-    position:relative;
-
-    z-index:10;
-
-    border-top:
-    1px solid rgba(255,122,133,.08);
-
-    padding:
-    40px 30px;
-
-    text-align:center;
-
-    color:rgba(255,255,255,.55);
 }
 
 
@@ -1071,7 +992,7 @@ RESPONSIVE
         1fr;
     }
 
-    .windowGrid{
+    .pageGrid{
 
         grid-template-columns:
         1fr;
@@ -1099,9 +1020,9 @@ RESPONSIVE
         letter-spacing:-2px;
     }
 
-    .windowHeader h2{
+    .pageTitle{
 
-        font-size:40px;
+        font-size:48px;
     }
 
     .hero{
@@ -1110,10 +1031,10 @@ RESPONSIVE
         140px 20px 80px;
     }
 
-    .windowsContainer{
+    .page{
 
         padding:
-        0 20px 100px;
+        140px 20px 80px;
     }
 }
 
@@ -1127,7 +1048,7 @@ RESPONSIVE
 
 
 <!-- =====================================================
-FLOATING NAV
+NAV
 ===================================================== -->
 
 <nav class="floatingNav">
@@ -1286,51 +1207,49 @@ Servidor cinematográfico • RP libre
 
 
 <!-- =====================================================
-WINDOWS
+PAGES
 ===================================================== -->
 
-<div class="windowsContainer">
+<div class="pagesSystem">
 
 
 <!-- =====================================================
 CONCEPTOS
 ===================================================== -->
 
-<section class="floatingWindow" id="conceptosPage">
+<div class="page" id="conceptosPage">
 
-<div class="windowHeader">
+<div class="pageContent">
 
-<h2>
-🧠 Conceptos Básicos
-</h2>
+<button class="btn btnGhost backButton" data-close>
+← Volver al Inicio
+</button>
 
-<p>
+<h1 class="pageTitle">
+Conceptos Básicos
+</h1>
+
+<p class="pageSub">
 Todo lo necesario para mantener un rol limpio.
 </p>
 
-</div>
+
+<div class="pageAccordion">
 
 
-<div class="premiumAccordion">
+<div class="pageItem">
 
-
-<!-- ======================================== -->
-
-<div class="premiumItem">
-
-<button class="premiumToggle">
+<button class="pageToggle">
 
 <span>
 ❌ MetaGaming (MG)
 </span>
 
-<div class="plusIcon">
-+
-</div>
+<span>+</span>
 
 </button>
 
-<div class="premiumContent">
+<div class="pageContentBox">
 
 <p>
 El MetaGaming consiste en usar información externa
@@ -1351,23 +1270,19 @@ para beneficiar el personaje dentro del rol.
 </div>
 
 
-<!-- ======================================== -->
+<div class="pageItem">
 
-<div class="premiumItem">
-
-<button class="premiumToggle">
+<button class="pageToggle">
 
 <span>
 ✅ PowerGaming (PG)
 </span>
 
-<div class="plusIcon">
-+
-</div>
+<span>+</span>
 
 </button>
 
-<div class="premiumContent">
+<div class="pageContentBox">
 
 <p>
 En LA JUMPA RP el PG está permitido
@@ -1379,23 +1294,19 @@ mientras no exista abuso.
 </div>
 
 
-<!-- ======================================== -->
+<div class="pageItem">
 
-<div class="premiumItem">
-
-<button class="premiumToggle">
+<button class="pageToggle">
 
 <span>
 ❌ Fail RP
 </span>
 
-<div class="plusIcon">
-+
-</div>
+<span>+</span>
 
 </button>
 
-<div class="premiumContent">
+<div class="pageContentBox">
 
 <p>
 Romper el entorno RP intencionalmente.
@@ -1407,7 +1318,9 @@ Romper el entorno RP intencionalmente.
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 
 
@@ -1415,24 +1328,25 @@ Romper el entorno RP intencionalmente.
 NORMAS
 ===================================================== -->
 
-<section class="floatingWindow" id="normasPage">
+<div class="page" id="normasPage">
 
-<div class="windowHeader">
+<div class="pageContent">
 
-<h2>
-📌 Normas Generales
-</h2>
+<button class="btn btnGhost backButton" data-close>
+← Volver al Inicio
+</button>
 
-<p>
+<h1 class="pageTitle">
+Normas Generales
+</h1>
+
+<p class="pageSub">
 Normativas oficiales del servidor.
 </p>
 
-</div>
+<div class="pageGrid">
 
-
-<div class="windowGrid">
-
-<div class="windowCard">
+<div class="pageCard">
 
 <h3>
 🔫 Combate
@@ -1445,7 +1359,7 @@ Todo combate debe tener contexto RP.
 </div>
 
 
-<div class="windowCard">
+<div class="pageCard">
 
 <h3>
 🚓 Policía
@@ -1458,7 +1372,7 @@ Las actuaciones deben mantener coherencia.
 </div>
 
 
-<div class="windowCard">
+<div class="pageCard">
 
 <h3>
 🕵️ Criminal
@@ -1471,7 +1385,7 @@ Debe existir historia y motivación.
 </div>
 
 
-<div class="windowCard">
+<div class="pageCard">
 
 <h3>
 ⚠️ OOC
@@ -1485,7 +1399,9 @@ Está prohibido afectar el entorno RP.
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 
 
@@ -1493,53 +1409,40 @@ Está prohibido afectar el entorno RP.
 ZONAS
 ===================================================== -->
 
-<section class="floatingWindow" id="zonasPage">
+<div class="page" id="zonasPage">
 
-<div class="windowHeader">
+<div class="pageContent">
 
-<h2>
-🏥 Zonas Seguras
-</h2>
+<button class="btn btnGhost backButton" data-close>
+← Volver al Inicio
+</button>
 
-<p>
-Lugares donde no puede iniciarse rol agresivo.
+<h1 class="pageTitle">
+Zonas Seguras
+</h1>
+
+<p class="pageSub">
+Lugares protegidos del servidor.
 </p>
 
-</div>
+<div class="pageGrid">
 
-
-<div class="windowGrid">
-
-<div class="windowCard">
+<div class="pageCard">
 
 <h3>
 🏥 Hospitales
 </h3>
 
 <p>
-Zona completamente protegida.
+Zona protegida.
 </p>
 
 </div>
 
-
-<div class="windowCard">
+<div class="pageCard">
 
 <h3>
 🚓 Comisarías
-</h3>
-
-<p>
-No puede iniciarse rol agresivo.
-</p>
-
-</div>
-
-
-<div class="windowCard">
-
-<h3>
-🚗 Garajes Públicos
 </h3>
 
 <p>
@@ -1548,35 +1451,37 @@ Zona segura del servidor.
 
 </div>
 
+<div class="pageCard">
 
-<div class="windowCard">
+<h3>
+🚗 Garajes
+</h3>
+
+<p>
+Zona protegida.
+</p>
+
+</div>
+
+<div class="pageCard">
 
 <h3>
 🏢 Concesionarios
 </h3>
 
 <p>
-Zona protegida para jugadores.
+No puede iniciarse rol agresivo.
 </p>
 
 </div>
 
 </div>
 
-</section>
+</div>
 
 </div>
 
-
-<!-- =====================================================
-FOOTER
-===================================================== -->
-
-<footer>
-
-© 2026 LA JUMPA RP — Todos los derechos reservados
-
-</footer>
+</div>
 
 
 
@@ -1607,55 +1512,42 @@ document.getElementById('copyDiscord')
 
 
 /* =========================================================
-PREMIUM WINDOWS SYSTEM
+PAGES SYSTEM
 ========================================================= */
 
-const navButtons =
+const navBtns =
 document.querySelectorAll('.navBtn');
 
-const windows =
-document.querySelectorAll('.floatingWindow');
+const pages =
+document.querySelectorAll('.page');
 
 
-navButtons.forEach(button => {
+navBtns.forEach(btn => {
 
-    button.addEventListener('click', () => {
-
-        navButtons.forEach(btn =>
-        btn.classList.remove('active'));
-
-        button.classList.add('active');
-
-        windows.forEach(win =>
-        win.classList.remove('active'));
+    btn.addEventListener('click', () => {
 
         const page =
-        button.dataset.page;
+        btn.dataset.page;
+
+        navBtns.forEach(b =>
+        b.classList.remove('active'));
+
+        btn.classList.add('active');
+
+
+        pages.forEach(page =>
+        page.classList.remove('active'));
+
 
         if(page === 'home'){
-
-            window.scrollTo({
-                top:0,
-                behavior:'smooth'
-            });
 
             return;
         }
 
+
         document
         .getElementById(page + 'Page')
         .classList.add('active');
-
-        window.scrollTo({
-
-            top:
-            document
-            .getElementById(page + 'Page')
-            .offsetTop - 120,
-
-            behavior:'smooth'
-
-        });
 
     });
 
@@ -1663,16 +1555,41 @@ navButtons.forEach(button => {
 
 
 /* =========================================================
-PREMIUM ACCORDION
+CLOSE PAGE
 ========================================================= */
 
-const premiumItems =
-document.querySelectorAll('.premiumItem');
+document
+.querySelectorAll('[data-close]')
+.forEach(btn => {
 
-premiumItems.forEach(item => {
+    btn.addEventListener('click', () => {
+
+        pages.forEach(page =>
+        page.classList.remove('active'));
+
+        navBtns.forEach(btn =>
+        btn.classList.remove('active'));
+
+        document
+        .querySelector('[data-page="home"]')
+        .classList.add('active');
+
+    });
+
+});
+
+
+/* =========================================================
+ACCORDION
+========================================================= */
+
+const pageItems =
+document.querySelectorAll('.pageItem');
+
+pageItems.forEach(item => {
 
     const toggle =
-    item.querySelector('.premiumToggle');
+    item.querySelector('.pageToggle');
 
     toggle.addEventListener('click', () => {
 
