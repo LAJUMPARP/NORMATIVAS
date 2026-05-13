@@ -1090,7 +1090,18 @@ Inicio
 Conceptos
 </button>
 
+<button class="navBtn" data-page="normas">
+<span></span>
+Normas
+</button>
+
+<button class="navBtn" data-page="zonas">
+<span></span>
+Zonas Seguras
+</button>
+
 </nav>
+
 
 
 <!-- =====================================================
@@ -1165,13 +1176,17 @@ El desconocimiento de las normas no exime de sanción.
 
 <div class="heroButtons">
 
+<a href="https://discord.gg/" target="_blank">
+
 <button class="btn btnPrimary">
 
 Entrar al Discord
 
 </button>
 
-<button class="btn btnGhost">
+</a>
+
+<button class="btn btnGhost" onclick="openPage('conceptosPage')">
 
 Ver Normativas
 
@@ -1189,6 +1204,8 @@ Ver Normativas
 <source src="assets/bg.mp4" type="video/mp4">
 
 </video>
+
+<div class="videoOverlay"></div>
 
 <div class="videoInfo">
 
@@ -1209,8 +1226,9 @@ Servidor cinematográfico • RP libre
 </section>
 
 
+
 <!-- =====================================================
-PAGES
+PAGES SYSTEM
 ===================================================== -->
 
 <div class="pagesSystem">
@@ -1237,6 +1255,11 @@ Todo lo necesario para mantener un rol limpio y cinematográfico.
 </p>
 
 
+
+<!-- =====================================================
+SUBMENU
+===================================================== -->
+
 <div class="subMenuWrapper">
 
 <button class="subMenuBtn active" data-subtab="mg">
@@ -1251,9 +1274,41 @@ PG
 NVVPJ
 </button>
 
+<button class="subMenuBtn" data-subtab="dmvdm">
+DM/VDM
+</button>
+
+<button class="subMenuBtn" data-subtab="rk">
+RK
+</button>
+
+<button class="subMenuBtn" data-subtab="pk">
+PK
+</button>
+
+<button class="subMenuBtn" data-subtab="ck">
+CK
+</button>
+
+<button class="subMenuBtn" data-subtab="fairplay">
+Fair Play
+</button>
+
+<button class="subMenuBtn" data-subtab="do">
+/Do
+</button>
+
+<button class="subMenuBtn" data-subtab="me">
+/Me
+</button>
+
 </div>
 
 
+
+<!-- =====================================================
+MG
+===================================================== -->
 
 <div class="subContent active" id="mg">
 
@@ -1284,6 +1339,7 @@ para beneficiar o afectar tu personaje.
 
 </p>
 
+
 <div class="compareGrid">
 
 <div class="goodBox">
@@ -1295,11 +1351,15 @@ para beneficiar o afectar tu personaje.
 <ul>
 
 <li>
-No usar Discord durante escenas.
+Actuar solo con información IC.
 </li>
 
 <li>
-Mantener información IC.
+Mantener inmersión RP.
+</li>
+
+<li>
+No usar Discord durante escenas.
 </li>
 
 </ul>
@@ -1320,7 +1380,11 @@ Mirar streams para encontrar personas.
 </li>
 
 <li>
-Usar información externa.
+Usar chats externos.
+</li>
+
+<li>
+Reconocer voces OOC.
 </li>
 
 </ul>
@@ -1328,6 +1392,7 @@ Usar información externa.
 </div>
 
 </div>
+
 
 <div class="tipBox">
 
@@ -1341,6 +1406,10 @@ Usar información externa.
 Tu personaje no sabe lo que tú sabes.
 </li>
 
+<li>
+Todo lo externo es OOC.
+</li>
+
 </ul>
 
 </div>
@@ -1350,6 +1419,10 @@ Tu personaje no sabe lo que tú sabes.
 </div>
 
 
+
+<!-- =====================================================
+PG
+===================================================== -->
 
 <div class="subContent" id="pg">
 
@@ -1379,11 +1452,61 @@ Realizar acciones imposibles o irreales.
 
 </p>
 
+
+<div class="compareGrid">
+
+<div class="goodBox">
+
+<h3>
+✅ Correcto
+</h3>
+
+<ul>
+
+<li>
+Mantener lógica RP.
+</li>
+
+<li>
+Dar tiempo de reacción.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="badBox">
+
+<h3>
+❌ Incorrecto
+</h3>
+
+<ul>
+
+<li>
+Escapar esposado.
+</li>
+
+<li>
+Saltar edificios irreales.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
 
 
+
+<!-- =====================================================
+NVVPJ
+===================================================== -->
 
 <div class="subContent" id="nvvpj">
 
@@ -1409,7 +1532,277 @@ NVVPJ
 
 <p>
 
-Tu personaje debe valorar su vida.
+Tu personaje debe valorar su vida
+como una persona real.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+DMVDM
+===================================================== -->
+
+<div class="subContent" id="dmvdm">
+
+<div class="subContentCard">
+
+<div class="subHeader">
+
+<div>
+
+<span class="subMini">
+CON 4
+</span>
+
+<h2>
+DM / VDM
+</h2>
+
+</div>
+
+</div>
+
+<div class="subDivider"></div>
+
+<p>
+
+Matar o atropellar sin rol previo
+está prohibido.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+RK
+===================================================== -->
+
+<div class="subContent" id="rk">
+
+<div class="subContentCard">
+
+<div class="subHeader">
+
+<div>
+
+<span class="subMini">
+CON 5
+</span>
+
+<h2>
+RK (Revenge Kill)
+</h2>
+
+</div>
+
+</div>
+
+<div class="subDivider"></div>
+
+<p>
+
+Volver a la escena tras morir
+para vengarte.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+PK
+===================================================== -->
+
+<div class="subContent" id="pk">
+
+<div class="subContentCard">
+
+<div class="subHeader">
+
+<div>
+
+<span class="subMini">
+CON 6
+</span>
+
+<h2>
+PK (Player Kill)
+</h2>
+
+</div>
+
+</div>
+
+<div class="subDivider"></div>
+
+<p>
+
+Olvido parcial de eventos recientes.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+CK
+===================================================== -->
+
+<div class="subContent" id="ck">
+
+<div class="subContentCard">
+
+<div class="subHeader">
+
+<div>
+
+<span class="subMini">
+CON 7
+</span>
+
+<h2>
+CK (Character Kill)
+</h2>
+
+</div>
+
+</div>
+
+<div class="subDivider"></div>
+
+<p>
+
+Muerte definitiva del personaje.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+FAIRPLAY
+===================================================== -->
+
+<div class="subContent" id="fairplay">
+
+<div class="subContentCard">
+
+<div class="subHeader">
+
+<div>
+
+<span class="subMini">
+CON 8
+</span>
+
+<h2>
+Fair Play
+</h2>
+
+</div>
+
+</div>
+
+<div class="subDivider"></div>
+
+<p>
+
+Interpretar tu personaje de forma honesta
+y respetuosa.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+DO
+===================================================== -->
+
+<div class="subContent" id="do">
+
+<div class="subContentCard">
+
+<div class="subHeader">
+
+<div>
+
+<span class="subMini">
+CON 9
+</span>
+
+<h2>
+/Do
+</h2>
+
+</div>
+
+</div>
+
+<div class="subDivider"></div>
+
+<p>
+
+Describe el entorno o algo visible.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+ME
+===================================================== -->
+
+<div class="subContent" id="me">
+
+<div class="subContentCard">
+
+<div class="subHeader">
+
+<div>
+
+<span class="subMini">
+CON 10
+</span>
+
+<h2>
+/Me
+</h2>
+
+</div>
+
+</div>
+
+<div class="subDivider"></div>
+
+<p>
+
+Describe acciones físicas visibles.
 
 </p>
 
@@ -1421,8 +1814,97 @@ Tu personaje debe valorar su vida.
 
 </div>
 
+
+
+<!-- =====================================================
+NORMAS
+===================================================== -->
+
+<div class="page" id="normasPage">
+
+<div class="pageContent">
+
+<button class="btn btnGhost backButton" data-close>
+← Volver al Inicio
+</button>
+
+<h1 class="pageTitle">
+Normas Generales
+</h1>
+
+<p class="pageSub">
+Reglas oficiales del servidor.
+</p>
+
+<div class="conceptsGrid">
+
+<div class="conceptCard">
+<h2>Combate</h2>
+<p>Todo combate debe tener contexto RP.</p>
 </div>
 
+<div class="conceptCard">
+<h2>Policía</h2>
+<p>Las actuaciones deben mantener coherencia.</p>
+</div>
+
+<div class="conceptCard">
+<h2>Economía</h2>
+<p>Prohibido abusar de bugs económicos.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+ZONAS
+===================================================== -->
+
+<div class="page" id="zonasPage">
+
+<div class="pageContent">
+
+<button class="btn btnGhost backButton" data-close>
+← Volver al Inicio
+</button>
+
+<h1 class="pageTitle">
+Zonas Seguras
+</h1>
+
+<p class="pageSub">
+Áreas protegidas del servidor.
+</p>
+
+<div class="conceptsGrid">
+
+<div class="conceptCard">
+<h2>Hospital</h2>
+<p>No se permite iniciar tiroteos.</p>
+</div>
+
+<div class="conceptCard">
+<h2>Comisaría</h2>
+<p>Zona protegida RP.</p>
+</div>
+
+<div class="conceptCard">
+<h2>Spawn</h2>
+<p>Prohibido matar jugadores recién conectados.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 <script>
 
