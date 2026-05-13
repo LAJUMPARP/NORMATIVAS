@@ -1,39 +1,39 @@
 <!doctype html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>LA JUMPA RP — Normativas</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-🔥 LA JUMPA RP — ULTRA MODERN UI
+🔥 LA JUMPA RP — ULTRA PREMIUM UI
 ========================================================= */
 
 :root{
 
     --primary:#ff7a85;
-    --primary2:#ff98a0;
+    --primary2:#ff9ea6;
 
     --bg:#050505;
     --bg2:#0d0d0d;
 
-    --card:rgba(15,15,15,.92);
+    --card:rgba(12,12,12,.94);
 
     --text:#ffffff;
     --text2:rgba(255,255,255,.68);
 
     --line:rgba(255,122,133,.14);
 
-    --shadow:
-    0 0 35px rgba(255,122,133,.10);
-
-    --radius:28px;
+    --radius:30px;
 }
 
 
@@ -63,8 +63,8 @@ body{
     transparent 30%),
 
     radial-gradient(circle at bottom right,
-    rgba(255,122,133,.06),
-    transparent 35%),
+    rgba(255,122,133,.05),
+    transparent 30%),
 
     linear-gradient(180deg,
     #040404 0%,
@@ -77,12 +77,36 @@ body{
 
 
 /* =========================================================
+SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#080808;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(180deg,
+    #ff7a85,
+    #ff9ca5);
+
+    border-radius:999px;
+}
+
+
+/* =========================================================
 BACKGROUND FX
 ========================================================= */
 
 .bgGlow{
 
     position:fixed;
+
     inset:0;
 
     pointer-events:none;
@@ -93,7 +117,7 @@ BACKGROUND FX
     transparent 30%),
 
     radial-gradient(circle at 80% 30%,
-    rgba(255,122,133,.05),
+    rgba(255,122,133,.04),
     transparent 30%);
 
     z-index:0;
@@ -101,169 +125,131 @@ BACKGROUND FX
 
 
 /* =========================================================
-NAVBAR
+FLOATING NAV
 ========================================================= */
 
-header{
+.floatingNav{
 
     position:fixed;
 
-    top:0;
-    left:0;
+    top:24px;
+    left:50%;
 
-    width:100%;
+    transform:translateX(-50%);
 
-    z-index:999;
+    z-index:9999;
 
-    backdrop-filter:blur(16px);
+    display:flex;
+    gap:14px;
+
+    padding:16px;
+
+    border-radius:24px;
 
     background:
     rgba(5,5,5,.72);
 
-    border-bottom:
-    1px solid rgba(255,122,133,.08);
-}
-
-.nav{
-
-    max-width:1400px;
-
-    margin:auto;
-
-    padding:18px 30px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:20px;
-}
-
-.brand{
-
-    display:flex;
-    align-items:center;
-
-    gap:14px;
-}
-
-.logo{
-
-    width:58px;
-    height:58px;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
     border:
-    1px solid rgba(255,122,133,.18);
+    1px solid rgba(255,122,133,.10);
+
+    backdrop-filter:
+    blur(18px);
 
     box-shadow:
-    0 0 30px rgba(255,122,133,.15);
+    0 10px 40px rgba(0,0,0,.45);
 }
 
-.logo img{
 
-    width:100%;
-    height:100%;
+/* =========================================================
+NAV BUTTONS
+========================================================= */
 
-    object-fit:cover;
-}
+.navBtn{
 
-.brand h2{
-
-    font-size:18px;
-    font-weight:800;
-}
-
-.brand span{
-
-    color:var(--text2);
-
-    font-size:13px;
-}
-
-.links{
-
-    display:flex;
-    gap:14px;
-}
-
-.links a{
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:12px 18px;
-
-    border-radius:14px;
-
-    transition:.25s ease;
-
-    font-size:14px;
-}
-
-.links a:hover{
-
-    background:
-    rgba(255,122,133,.08);
-
-    color:var(--primary);
-}
-
-.actions{
-
-    display:flex;
-    gap:12px;
-}
-
-.btn{
+    position:relative;
 
     border:none;
     outline:none;
 
     cursor:pointer;
 
-    padding:14px 22px;
+    overflow:hidden;
 
-    border-radius:16px;
+    padding:
+    16px 24px;
 
-    font-weight:700;
+    border-radius:18px;
+
+    background:
+    rgba(255,255,255,.02);
 
     color:white;
 
-    transition:.25s ease;
+    font-size:15px;
+    font-weight:700;
+
+    transition:.3s ease;
+
+    border:
+    1px solid transparent;
 }
 
-.btnPrimary{
+.navBtn span{
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:1px;
+
+    background:
+    linear-gradient(90deg,
+    transparent,
+    #ff7a85,
+    transparent);
+
+    transition:.4s ease;
+}
+
+.navBtn:hover{
+
+    transform:
+    translateY(-3px);
+
+    background:
+    rgba(255,122,133,.08);
+
+    border:
+    1px solid rgba(255,122,133,.18);
+
+    box-shadow:
+    0 0 25px rgba(255,122,133,.10);
+}
+
+.navBtn:hover span{
+
+    left:0;
+}
+
+.navBtn.active{
 
     background:
     linear-gradient(135deg,
-    #ff7a85,
-    #ff9ca5);
-
-    box-shadow:
-    0 0 30px rgba(255,122,133,.20);
-}
-
-.btnPrimary:hover{
-
-    transform:
-    translateY(-2px);
-
-    box-shadow:
-    0 0 50px rgba(255,122,133,.35);
-}
-
-.btnGhost{
-
-    background:
-    rgba(255,255,255,.03);
+    rgba(255,122,133,.14),
+    rgba(255,122,133,.05));
 
     border:
-    1px solid rgba(255,122,133,.12);
+    1px solid rgba(255,122,133,.22);
+
+    box-shadow:
+    0 0 30px rgba(255,122,133,.16);
+}
+
+.navBtn.active span{
+
+    left:0;
 }
 
 
@@ -284,12 +270,12 @@ HERO
     padding:
     140px 30px 80px;
 
-    z-index:1;
+    z-index:2;
 }
 
 .heroContainer{
 
-    max-width:1400px;
+    max-width:1450px;
 
     width:100%;
 
@@ -298,7 +284,7 @@ HERO
     grid-template-columns:
     1fr 1fr;
 
-    gap:32px;
+    gap:34px;
 
     align-items:center;
 }
@@ -314,6 +300,51 @@ LEFT
     flex-direction:column;
 
     gap:24px;
+}
+
+.logoRow{
+
+    display:flex;
+    align-items:center;
+
+    gap:18px;
+}
+
+.logo{
+
+    width:74px;
+    height:74px;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    border:
+    1px solid rgba(255,122,133,.18);
+
+    box-shadow:
+    0 0 35px rgba(255,122,133,.15);
+}
+
+.logo img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.serverInfo h3{
+
+    font-size:24px;
+    font-weight:900;
+}
+
+.serverInfo p{
+
+    color:var(--text2);
+
+    margin-top:4px;
 }
 
 .tags{
@@ -334,17 +365,28 @@ LEFT
     rgba(255,122,133,.08);
 
     border:
-    1px solid rgba(255,122,133,.15);
+    1px solid rgba(255,122,133,.16);
 
     font-size:12px;
 
     font-weight:700;
+
+    transition:.25s ease;
+}
+
+.tag:hover{
+
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+    0 0 20px rgba(255,122,133,.12);
 }
 
 .heroTitle{
 
     font-size:
-    clamp(60px,7vw,110px);
+    clamp(65px,8vw,120px);
 
     line-height:.92;
 
@@ -366,7 +408,7 @@ LEFT
     -webkit-text-fill-color:transparent;
 
     filter:
-    drop-shadow(0 0 25px rgba(255,122,133,.18));
+    drop-shadow(0 0 30px rgba(255,122,133,.22));
 }
 
 .heroText{
@@ -375,7 +417,7 @@ LEFT
 
     color:var(--text2);
 
-    line-height:1.8;
+    line-height:1.9;
 
     font-size:18px;
 }
@@ -390,6 +432,99 @@ LEFT
 
 
 /* =========================================================
+BUTTONS
+========================================================= */
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:none;
+    outline:none;
+
+    cursor:pointer;
+
+    padding:
+    16px 26px;
+
+    border-radius:18px;
+
+    color:white;
+
+    font-size:15px;
+    font-weight:800;
+
+    transition:.3s ease;
+}
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:1px;
+
+    background:
+    linear-gradient(90deg,
+    transparent,
+    white,
+    transparent);
+
+    transition:.4s ease;
+}
+
+.btn:hover::before{
+
+    left:0;
+}
+
+.btnPrimary{
+
+    background:
+    linear-gradient(135deg,
+    #ff7a85,
+    #ff9ea6);
+
+    box-shadow:
+    0 0 35px rgba(255,122,133,.22);
+}
+
+.btnPrimary:hover{
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 0 60px rgba(255,122,133,.35);
+}
+
+.btnGhost{
+
+    background:
+    rgba(255,255,255,.03);
+
+    border:
+    1px solid rgba(255,122,133,.12);
+}
+
+.btnGhost:hover{
+
+    background:
+    rgba(255,122,133,.08);
+
+    border:
+    1px solid rgba(255,122,133,.22);
+}
+
+
+/* =========================================================
 VIDEO CARD
 ========================================================= */
 
@@ -397,9 +532,9 @@ VIDEO CARD
 
     position:relative;
 
-    height:620px;
+    height:650px;
 
-    border-radius:32px;
+    border-radius:34px;
 
     overflow:hidden;
 
@@ -411,145 +546,10 @@ VIDEO CARD
     box-shadow:
     0 0 0 1px rgba(255,122,133,.04),
     0 20px 60px rgba(0,0,0,.45),
-    0 0 60px rgba(255,122,133,.10);
+    0 0 60px rgba(255,122,133,.08);
 }
 
-.videoCard video{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:
-    transform .5s ease;
-}
-
-.videoCard:hover video{
-
-    transform:scale(1.03);
-}
-
-.videoOverlay{
-
-    position:absolute;
-    inset:0;
-
-    background:
-    linear-gradient(to top,
-    rgba(0,0,0,.85),
-    transparent 50%);
-}
-
-.videoInfo{
-
-    position:absolute;
-
-    left:24px;
-    bottom:24px;
-
-    z-index:5;
-}
-
-.videoInfo h3{
-
-    font-size:28px;
-    font-weight:800;
-}
-
-.videoInfo p{
-
-    margin-top:6px;
-
-    color:rgba(255,255,255,.70);
-}
-
-
-/* =========================================================
-SECTIONS
-========================================================= */
-
-.section{
-
-    position:relative;
-
-    z-index:1;
-
-    max-width:1400px;
-
-    margin:auto;
-
-    padding:
-    40px 30px 120px;
-}
-
-.sectionTitle{
-
-    font-size:52px;
-
-    font-weight:900;
-
-    margin-bottom:12px;
-}
-
-.sectionSub{
-
-    color:var(--text2);
-
-    margin-bottom:40px;
-
-    line-height:1.7;
-}
-
-
-/* =========================================================
-CARDS
-========================================================= */
-
-.grid{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:24px;
-}
-
-.card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-    linear-gradient(180deg,
-    rgba(14,14,14,.96),
-    rgba(8,8,8,.98));
-
-    border:
-    1px solid rgba(255,122,133,.12);
-
-    border-radius:28px;
-
-    padding:28px;
-
-    transition:.3s ease;
-}
-
-.card:hover{
-
-    transform:
-    translateY(-4px);
-
-    border-color:
-    rgba(255,122,133,.22);
-
-    box-shadow:
-    0 0 60px rgba(255,122,133,.10);
-}
-
-.card::before{
+.videoCard::before{
 
     content:"";
 
@@ -564,33 +564,207 @@ CARDS
     background:
     linear-gradient(90deg,
     transparent,
-    rgba(255,122,133,.55),
+    rgba(255,122,133,.70),
     transparent);
+
+    z-index:5;
 }
 
-.card h3{
+.videoCard video{
 
-    font-size:32px;
+    width:100%;
+    height:100%;
 
-    margin-bottom:18px;
+    object-fit:cover;
 
-    font-weight:800;
+    transition:
+    transform .6s ease;
+}
+
+.videoCard:hover video{
+
+    transform:scale(1.04);
+}
+
+.videoOverlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(to top,
+    rgba(0,0,0,.88),
+    transparent 50%);
+}
+
+.videoInfo{
+
+    position:absolute;
+
+    left:28px;
+    bottom:28px;
+
+    z-index:5;
+}
+
+.videoInfo h2{
+
+    font-size:34px;
+    font-weight:900;
+}
+
+.videoInfo p{
+
+    margin-top:8px;
+
+    color:rgba(255,255,255,.70);
 }
 
 
 /* =========================================================
-ACCORDION
+WINDOWS CONTAINER
 ========================================================= */
 
-.accordion{
+.windowsContainer{
 
-    display:flex;
-    flex-direction:column;
+    position:relative;
 
-    gap:16px;
+    z-index:10;
+
+    max-width:1450px;
+
+    margin:auto;
+
+    padding:
+    0 30px 120px;
 }
 
-details{
+
+/* =========================================================
+WINDOW
+========================================================= */
+
+.floatingWindow{
+
+    position:relative;
+
+    display:none;
+
+    animation:
+    premiumWindow .45s cubic-bezier(.22,1,.36,1);
+
+    margin-top:40px;
+
+    background:
+    linear-gradient(180deg,
+    rgba(14,14,14,.96),
+    rgba(8,8,8,.98));
+
+    border:
+    1px solid rgba(255,122,133,.12);
+
+    border-radius:34px;
+
+    overflow:hidden;
+
+    padding:34px;
+
+    box-shadow:
+    0 0 0 1px rgba(255,122,133,.04),
+    0 20px 60px rgba(0,0,0,.45),
+    0 0 60px rgba(255,122,133,.08);
+}
+
+.floatingWindow.active{
+
+    display:block;
+}
+
+
+/* =========================================================
+WINDOW OPEN EFFECT
+========================================================= */
+
+@keyframes premiumWindow{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateY(40px)
+        scale(.96);
+
+        filter:blur(10px);
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+        filter:blur(0);
+    }
+}
+
+
+/* =========================================================
+HEADER
+========================================================= */
+
+.windowHeader{
+
+    margin-bottom:34px;
+}
+
+.windowHeader h2{
+
+    font-size:54px;
+
+    font-weight:900;
+
+    margin-bottom:10px;
+}
+
+.windowHeader p{
+
+    color:rgba(255,255,255,.65);
+
+    font-size:17px;
+}
+
+
+/* =========================================================
+GRID
+========================================================= */
+
+.windowGrid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:24px;
+}
+
+
+/* =========================================================
+WINDOW CARD
+========================================================= */
+
+.windowCard{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:28px;
+
+    border-radius:28px;
 
     background:
     rgba(255,255,255,.02);
@@ -598,60 +772,268 @@ details{
     border:
     1px solid rgba(255,122,133,.10);
 
-    border-radius:20px;
-
-    overflow:hidden;
-
-    transition:.25s ease;
+    transition:.3s ease;
 }
 
-details:hover{
+.windowCard::before{
 
-    border-color:
-    rgba(255,122,133,.22);
-}
+    content:"";
 
-summary{
+    position:absolute;
 
-    list-style:none;
+    top:0;
+    left:-100%;
 
-    cursor:pointer;
-
-    padding:20px;
-
-    font-size:18px;
-
-    font-weight:700;
-
-    transition:.25s ease;
-}
-
-summary:hover{
+    width:100%;
+    height:1px;
 
     background:
-    rgba(255,122,133,.04);
+    linear-gradient(90deg,
+    transparent,
+    #ff7a85,
+    transparent);
+
+    transition:.4s ease;
 }
 
-.content{
+.windowCard:hover{
 
-    padding:
-    0 20px 22px;
+    transform:
+    translateY(-4px);
+
+    background:
+    rgba(255,122,133,.05);
+
+    border:
+    1px solid rgba(255,122,133,.22);
+
+    box-shadow:
+    0 0 40px rgba(255,122,133,.10);
+}
+
+.windowCard:hover::before{
+
+    left:0;
+}
+
+.windowCard h3{
+
+    font-size:24px;
+    font-weight:800;
+
+    margin-bottom:12px;
+}
+
+.windowCard p{
 
     color:var(--text2);
 
     line-height:1.8;
 }
 
-.content ul{
+
+/* =========================================================
+PREMIUM ACCORDION
+========================================================= */
+
+.premiumAccordion{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.premiumItem{
+
+    overflow:hidden;
+
+    border-radius:26px;
+
+    border:
+    1px solid rgba(255,122,133,.10);
+
+    background:
+    rgba(255,255,255,.02);
+
+    transition:.3s ease;
+}
+
+.premiumItem.active{
+
+    border:
+    1px solid rgba(255,122,133,.22);
+
+    box-shadow:
+    0 0 40px rgba(255,122,133,.08);
+}
+
+
+/* =========================================================
+ACCORDION BUTTON
+========================================================= */
+
+.premiumToggle{
+
+    position:relative;
+
+    width:100%;
+
+    border:none;
+    outline:none;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    padding:
+    24px 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:transparent;
+
+    color:white;
+
+    font-size:20px;
+    font-weight:800;
+}
+
+.premiumToggle::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:1px;
+
+    background:
+    linear-gradient(90deg,
+    transparent,
+    #ff7a85,
+    transparent);
+
+    transition:.4s ease;
+}
+
+.premiumItem:hover .premiumToggle::before{
+
+    left:0;
+}
+
+
+/* =========================================================
+PLUS ICON
+========================================================= */
+
+.plusIcon{
+
+    width:44px;
+    height:44px;
+
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    rgba(255,122,133,.08);
+
+    border:
+    1px solid rgba(255,122,133,.16);
+
+    transition:.3s ease;
+}
+
+.premiumItem.active .plusIcon{
+
+    transform:
+    rotate(45deg);
+
+    background:
+    rgba(255,122,133,.18);
+}
+
+
+/* =========================================================
+CONTENT
+========================================================= */
+
+.premiumContent{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:
+    max-height .45s cubic-bezier(.22,1,.36,1),
+    padding .35s ease;
+}
+
+.premiumItem.active .premiumContent{
+
+    max-height:500px;
+
+    padding:
+    0 28px 28px;
+}
+
+.premiumContent p,
+.premiumContent li{
+
+    color:var(--text2);
+
+    line-height:1.8;
+}
+
+.premiumContent ul{
 
     padding-left:18px;
 
-    margin-top:14px;
+    margin-top:16px;
 }
 
-.content li{
+.premiumContent li{
 
     margin-bottom:12px;
+}
+
+
+/* =========================================================
+FADE EFFECT
+========================================================= */
+
+.premiumContent p,
+.premiumContent li{
+
+    animation:
+    fadeUp .45s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(10px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
 }
 
 
@@ -660,6 +1042,10 @@ FOOTER
 ========================================================= */
 
 footer{
+
+    position:relative;
+
+    z-index:10;
 
     border-top:
     1px solid rgba(255,122,133,.08);
@@ -685,7 +1071,7 @@ RESPONSIVE
         1fr;
     }
 
-    .grid{
+    .windowGrid{
 
         grid-template-columns:
         1fr;
@@ -693,97 +1079,80 @@ RESPONSIVE
 
     .videoCard{
 
-        height:420px;
+        height:450px;
     }
 }
 
-@media(max-width:750px){
+@media(max-width:850px){
 
-    .links{
-        display:none;
+    .floatingNav{
+
+        width:95%;
+
+        overflow:auto;
     }
 
     .heroTitle{
 
-        font-size:56px;
+        font-size:60px;
 
         letter-spacing:-2px;
     }
 
-    .sectionTitle{
+    .windowHeader h2{
 
-        font-size:42px;
-    }
-
-    .nav{
-
-        padding:16px 18px;
+        font-size:40px;
     }
 
     .hero{
 
         padding:
-        120px 20px 60px;
+        140px 20px 80px;
     }
 
-    .section{
+    .windowsContainer{
 
         padding:
-        20px 20px 100px;
+        0 20px 100px;
     }
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="bgGlow"></div>
 
+
 <!-- =====================================================
-NAVBAR
+FLOATING NAV
 ===================================================== -->
 
-<header>
+<nav class="floatingNav">
 
-<div class="nav">
+<button class="navBtn active" data-page="home">
+<span></span>
+Inicio
+</button>
 
-<div class="brand">
+<button class="navBtn" data-page="conceptos">
+<span></span>
+Conceptos
+</button>
 
-<div class="logo">
-<img src="assets/logo.png" alt="">
-</div>
+<button class="navBtn" data-page="normas">
+<span></span>
+Normas
+</button>
 
-<div>
-<h2>LA JUMPA RP</h2>
-<span>Normativas oficiales • FiveM</span>
-</div>
+<button class="navBtn" data-page="zonas">
+<span></span>
+Zonas Seguras
+</button>
 
-</div>
-
-<nav class="links">
-<a href="#conceptos">Conceptos</a>
-<a href="#normas">Normas</a>
-<a href="#zonas">Zonas Seguras</a>
 </nav>
-
-<div class="actions">
-
-<button class="btn btnGhost" id="copyDiscord">
-Copiar Discord
-</button>
-
-<a href="https://discord.gg/HvErKPg3Uk" target="_blank">
-<button class="btn btnPrimary">
-Entrar a Discord
-</button>
-</a>
-
-</div>
-
-</div>
-
-</header>
 
 
 <!-- =====================================================
@@ -794,19 +1163,62 @@ HERO
 
 <div class="heroContainer">
 
+
+<!-- =====================================================
+LEFT
+===================================================== -->
+
 <div class="heroLeft">
 
-<div class="tags">
-<div class="tag">CINEMATIC</div>
-<div class="tag">ROLEPLAY</div>
-<div class="tag">FIVEM</div>
-<div class="tag">LA JUMPA RP</div>
+<div class="logoRow">
+
+<div class="logo">
+<img src="assets/logo.png" alt="">
 </div>
 
+<div class="serverInfo">
+
+<h3>
+LA JUMPA RP
+</h3>
+
+<p>
+Normativas Oficiales • FiveM
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tags">
+
+<div class="tag">
+CINEMATIC
+</div>
+
+<div class="tag">
+ROLEPLAY
+</div>
+
+<div class="tag">
+FIVEM
+</div>
+
+<div class="tag">
+LA JUMPA RP
+</div>
+
+</div>
+
+
 <h1 class="heroTitle">
+
 NORMATIVAS
 <span>LA JUMPA RP</span>
+
 </h1>
+
 
 <p class="heroText">
 
@@ -815,24 +1227,34 @@ El desconocimiento de las normas no exime de sanción.
 
 </p>
 
+
 <div class="heroButtons">
 
-<a href="#normas">
+<a href="https://discord.gg/HvErKPg3Uk" target="_blank">
+
 <button class="btn btnPrimary">
-Ver Normativas
+
+Entrar a Discord
+
 </button>
+
 </a>
 
-<a href="#conceptos">
-<button class="btn btnGhost">
-Conceptos RP
+
+<button class="btn btnGhost" id="copyDiscord">
+
+Copiar Discord
+
 </button>
-</a>
 
 </div>
 
 </div>
 
+
+<!-- =====================================================
+VIDEO
+===================================================== -->
 
 <div class="videoCard">
 
@@ -846,7 +1268,9 @@ Conceptos RP
 
 <div class="videoInfo">
 
-<h3>LA JUMPA RP</h3>
+<h2>
+LA JUMPA RP
+</h2>
 
 <p>
 Servidor cinematográfico • RP libre
@@ -862,145 +1286,120 @@ Servidor cinematográfico • RP libre
 
 
 <!-- =====================================================
+WINDOWS
+===================================================== -->
+
+<div class="windowsContainer">
+
+
+<!-- =====================================================
 CONCEPTOS
 ===================================================== -->
 
-<section class="section" id="conceptos">
+<section class="floatingWindow" id="conceptosPage">
 
-<h2 class="sectionTitle">
-Conceptos Básicos
+<div class="windowHeader">
+
+<h2>
+🧠 Conceptos Básicos
 </h2>
 
-<p class="sectionSub">
-Todo lo necesario para mantener un rol limpio y divertido.
+<p>
+Todo lo necesario para mantener un rol limpio.
 </p>
 
-<div class="grid">
+</div>
 
-<div class="card">
 
-<h3>🧠 Conceptos RP</h3>
+<div class="premiumAccordion">
 
-<div class="accordion">
 
-<details open>
+<!-- ======================================== -->
 
-<summary>
+<div class="premiumItem">
+
+<button class="premiumToggle">
+
+<span>
 ❌ MetaGaming (MG)
-</summary>
+</span>
 
-<div class="content">
+<div class="plusIcon">
++
+</div>
+
+</button>
+
+<div class="premiumContent">
 
 <p>
-Usar información externa para beneficiar al personaje dentro del rol.
+El MetaGaming consiste en usar información externa
+para beneficiar el personaje dentro del rol.
 </p>
 
 <ul>
-<li>Streams</li>
+
 <li>Discord</li>
-<li>Chats externos</li>
+<li>Streams</li>
 <li>Información OOC</li>
+<li>Chats externos</li>
+
 </ul>
 
 </div>
 
-</details>
+</div>
 
-<details>
 
-<summary>
+<!-- ======================================== -->
+
+<div class="premiumItem">
+
+<button class="premiumToggle">
+
+<span>
 ✅ PowerGaming (PG)
-</summary>
+</span>
 
-<div class="content">
+<div class="plusIcon">
++
+</div>
+
+</button>
+
+<div class="premiumContent">
 
 <p>
-En LA JUMPA RP el PG está permitido mientras no exista abuso.
+En LA JUMPA RP el PG está permitido
+mientras no exista abuso.
 </p>
 
 </div>
 
-</details>
+</div>
 
-<details>
 
-<summary>
+<!-- ======================================== -->
+
+<div class="premiumItem">
+
+<button class="premiumToggle">
+
+<span>
 ❌ Fail RP
-</summary>
+</span>
 
-<div class="content">
+<div class="plusIcon">
++
+</div>
+
+</button>
+
+<div class="premiumContent">
 
 <p>
-Romper el entorno RP de forma intencional.
+Romper el entorno RP intencionalmente.
 </p>
-
-</div>
-
-</details>
-
-</div>
-
-</div>
-
-
-<div class="card" id="normas">
-
-<h3>📌 Normas Generales</h3>
-
-<div class="accordion">
-
-<details>
-
-<summary>
-🔫 Combate / RDM / VDM
-</summary>
-
-<div class="content">
-
-<ul>
-<li>Todo combate debe tener contexto.</li>
-<li>El RDM abusivo está prohibido.</li>
-<li>El VDM debe justificarse.</li>
-</ul>
-
-</div>
-
-</details>
-
-<details>
-
-<summary>
-🕵️ Rol Criminal
-</summary>
-
-<div class="content">
-
-<ul>
-<li>Debe existir historia y contexto.</li>
-<li>No se permite campear zonas ilegales.</li>
-<li>Las organizaciones tienen límites.</li>
-</ul>
-
-</div>
-
-</details>
-
-<details>
-
-<summary>
-🚓 Rol Policial
-</summary>
-
-<div class="content">
-
-<ul>
-<li>Debe existir criterio y coherencia.</li>
-<li>El uso de fuerza debe justificarse.</li>
-</ul>
-
-</div>
-
-</details>
 
 </div>
 
@@ -1009,63 +1408,164 @@ Romper el entorno RP de forma intencional.
 </div>
 
 </section>
+
+
+
+<!-- =====================================================
+NORMAS
+===================================================== -->
+
+<section class="floatingWindow" id="normasPage">
+
+<div class="windowHeader">
+
+<h2>
+📌 Normas Generales
+</h2>
+
+<p>
+Normativas oficiales del servidor.
+</p>
+
+</div>
+
+
+<div class="windowGrid">
+
+<div class="windowCard">
+
+<h3>
+🔫 Combate
+</h3>
+
+<p>
+Todo combate debe tener contexto RP.
+</p>
+
+</div>
+
+
+<div class="windowCard">
+
+<h3>
+🚓 Policía
+</h3>
+
+<p>
+Las actuaciones deben mantener coherencia.
+</p>
+
+</div>
+
+
+<div class="windowCard">
+
+<h3>
+🕵️ Criminal
+</h3>
+
+<p>
+Debe existir historia y motivación.
+</p>
+
+</div>
+
+
+<div class="windowCard">
+
+<h3>
+⚠️ OOC
+</h3>
+
+<p>
+Está prohibido afectar el entorno RP.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
 
 
 <!-- =====================================================
 ZONAS
 ===================================================== -->
 
-<section class="section" id="zonas">
+<section class="floatingWindow" id="zonasPage">
 
-<h2 class="sectionTitle">
-Zonas Seguras
+<div class="windowHeader">
+
+<h2>
+🏥 Zonas Seguras
 </h2>
 
-<p class="sectionSub">
-No está permitido iniciar rol agresivo en estas zonas.
+<p>
+Lugares donde no puede iniciarse rol agresivo.
 </p>
 
-<div class="grid">
+</div>
 
-<div class="card">
 
-<h3>🏥 Lugares protegidos</h3>
+<div class="windowGrid">
 
-<div class="content">
+<div class="windowCard">
 
-<ul>
-<li>Hospitales</li>
-<li>Comisarías</li>
-<li>Spawn inicial</li>
-<li>Garajes públicos</li>
-<li>Concesionarios</li>
-</ul>
+<h3>
+🏥 Hospitales
+</h3>
+
+<p>
+Zona completamente protegida.
+</p>
 
 </div>
 
-</div>
 
-<div class="card">
+<div class="windowCard">
 
-<h3>⚖️ Sanciones</h3>
+<h3>
+🚓 Comisarías
+</h3>
 
-<div class="content">
-
-<ul>
-<li>Advertencia</li>
-<li>Jail administrativo</li>
-<li>Kick</li>
-<li>Ban temporal</li>
-<li>Ban permanente</li>
-</ul>
+<p>
+No puede iniciarse rol agresivo.
+</p>
 
 </div>
+
+
+<div class="windowCard">
+
+<h3>
+🚗 Garajes Públicos
+</h3>
+
+<p>
+Zona segura del servidor.
+</p>
+
+</div>
+
+
+<div class="windowCard">
+
+<h3>
+🏢 Concesionarios
+</h3>
+
+<p>
+Zona protegida para jugadores.
+</p>
 
 </div>
 
 </div>
 
 </section>
+
+</div>
 
 
 <!-- =====================================================
@@ -1079,7 +1579,12 @@ FOOTER
 </footer>
 
 
+
 <script>
+
+/* =========================================================
+COPY DISCORD
+========================================================= */
 
 document.getElementById('copyDiscord')
 .addEventListener('click', async () => {
@@ -1097,6 +1602,83 @@ document.getElementById('copyDiscord')
         alert('No se pudo copiar');
 
     }
+
+});
+
+
+/* =========================================================
+PREMIUM WINDOWS SYSTEM
+========================================================= */
+
+const navButtons =
+document.querySelectorAll('.navBtn');
+
+const windows =
+document.querySelectorAll('.floatingWindow');
+
+
+navButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        navButtons.forEach(btn =>
+        btn.classList.remove('active'));
+
+        button.classList.add('active');
+
+        windows.forEach(win =>
+        win.classList.remove('active'));
+
+        const page =
+        button.dataset.page;
+
+        if(page === 'home'){
+
+            window.scrollTo({
+                top:0,
+                behavior:'smooth'
+            });
+
+            return;
+        }
+
+        document
+        .getElementById(page + 'Page')
+        .classList.add('active');
+
+        window.scrollTo({
+
+            top:
+            document
+            .getElementById(page + 'Page')
+            .offsetTop - 120,
+
+            behavior:'smooth'
+
+        });
+
+    });
+
+});
+
+
+/* =========================================================
+PREMIUM ACCORDION
+========================================================= */
+
+const premiumItems =
+document.querySelectorAll('.premiumItem');
+
+premiumItems.forEach(item => {
+
+    const toggle =
+    item.querySelector('.premiumToggle');
+
+    toggle.addEventListener('click', () => {
+
+        item.classList.toggle('active');
+
+    });
 
 });
 
