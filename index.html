@@ -1758,6 +1758,292 @@ CARD REVEAL
         blur(0);
     }
 }
+
+
+
+    /* =========================================================
+🔥 MODAL NORMATIVAS - CLICK PARA ABRIR
+========================================================= */
+
+/* Compactar SOLO las normas, no toca Conceptos ni Zonas */
+#normasPage .conceptCard{
+    cursor:pointer;
+    min-height:265px;
+    max-height:285px;
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    border:
+    1px solid rgba(255,122,133,.18);
+
+    background:
+    linear-gradient(145deg,
+    rgba(28,22,24,.96),
+    rgba(8,8,8,.98));
+
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.55),
+    inset 0 0 35px rgba(255,122,133,.035);
+}
+
+/* Oculta el contenido completo dentro del container comprimido */
+#normasPage .conceptCard > .conceptDivider,
+#normasPage .conceptCard > .conceptSection,
+#normasPage .conceptCard > .tipBox{
+    display:none;
+}
+
+/* Título más limpio dentro de card comprimida */
+#normasPage .conceptCard h2{
+    font-size:34px;
+    margin-top:18px;
+}
+
+/* Descripción compacta */
+#normasPage .conceptCard p{
+    margin-top:16px;
+    max-height:62px;
+    overflow:hidden;
+    color:rgba(255,255,255,.55);
+}
+
+/* Texto CLICK abajo */
+.normOpenHint{
+    margin-top:auto;
+
+    width:max-content;
+
+    padding:
+    11px 18px;
+
+    border-radius:999px;
+
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.8px;
+
+    color:#ffc1c7;
+
+    background:
+    rgba(255,122,133,.10);
+
+    border:
+    1px solid rgba(255,122,133,.28);
+
+    box-shadow:
+    0 0 22px rgba(255,122,133,.12);
+
+    pointer-events:none;
+}
+
+/* Overlay oscuro con blur */
+.normModalOverlay{
+    position:fixed;
+
+    inset:0;
+
+    z-index:20000;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:30px;
+
+    background:
+    rgba(0,0,0,.65);
+
+    backdrop-filter:
+    blur(18px)
+    saturate(160%);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+    opacity .35s ease,
+    visibility .35s ease;
+}
+
+.normModalOverlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* Ventana central */
+.normModalBox{
+    position:relative;
+
+    width:min(980px,96vw);
+    max-height:88vh;
+
+    overflow-y:auto;
+
+    border-radius:34px;
+
+    padding:34px;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,122,133,.13),
+    transparent 34%),
+
+    linear-gradient(180deg,
+    rgba(18,18,18,.98),
+    rgba(5,5,5,1));
+
+    border:
+    1px solid rgba(255,122,133,.22);
+
+    box-shadow:
+    0 40px 130px rgba(0,0,0,.85),
+    0 0 80px rgba(255,122,133,.15);
+
+    transform:
+    translateY(40px)
+    scale(.94);
+
+    filter:
+    blur(8px);
+
+    transition:
+    transform .35s ease,
+    filter .35s ease;
+}
+
+.normModalOverlay.active .normModalBox{
+    transform:
+    translateY(0)
+    scale(1);
+
+    filter:
+    blur(0);
+}
+
+/* Botón cerrar */
+.normModalClose{
+    position:sticky;
+
+    top:0;
+    margin-left:auto;
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    outline:none;
+
+    cursor:pointer;
+
+    border-radius:16px;
+
+    color:white;
+
+    font-size:26px;
+    font-weight:900;
+
+    background:
+    rgba(255,122,133,.12);
+
+    border:
+    1px solid rgba(255,122,133,.25);
+
+    box-shadow:
+    0 0 30px rgba(255,122,133,.12);
+
+    z-index:5;
+
+    transition:.25s ease;
+}
+
+.normModalClose:hover{
+    transform:scale(1.06);
+    background:rgba(255,122,133,.22);
+}
+
+/* Card clonada dentro del modal */
+.normModalContent .conceptCard{
+    cursor:default;
+
+    max-height:none;
+    min-height:auto;
+
+    overflow:visible;
+
+    padding:0;
+
+    border:none;
+
+    background:transparent;
+
+    box-shadow:none;
+
+    backdrop-filter:none;
+}
+
+.normModalContent .conceptCard:hover{
+    transform:none;
+    border:none;
+    box-shadow:none;
+}
+
+.normModalContent .conceptCard::before{
+    display:none;
+}
+
+.normModalContent .conceptCard h2{
+    font-size:
+    clamp(38px,5vw,62px);
+
+    margin-top:18px;
+}
+
+.normModalContent .conceptCard p{
+    max-height:none;
+
+    margin-bottom:28px;
+
+    color:rgba(255,255,255,.72);
+
+    font-size:18px;
+    line-height:1.9;
+}
+
+.normModalContent .normOpenHint{
+    display:none;
+}
+
+.normModalContent .conceptDivider{
+    display:block;
+}
+
+.normModalContent .conceptSection,
+.normModalContent .tipBox{
+    display:block;
+}
+
+/* Responsive */
+@media(max-width:800px){
+
+    .normModalOverlay{
+        padding:16px;
+    }
+
+    .normModalBox{
+        padding:24px;
+        border-radius:26px;
+    }
+
+    #normasPage .conceptCard{
+        min-height:245px;
+    }
+}
 </style>
 
 </head>
