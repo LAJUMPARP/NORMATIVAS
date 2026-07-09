@@ -1757,6 +1757,547 @@ CARD REVEAL
         blur(0);
     }
 }
+
+
+/* =========================================================
+🔥 RETOQUE PREMIUM — CONTENEDORES DE NORMAS
+Solo afecta la página de Normas Generales
+========================================================= */
+
+#normasPage .conceptsGrid{
+    gap:30px;
+    align-items:stretch;
+}
+
+#normasPage .conceptCard{
+    min-height:100%;
+    display:flex;
+    flex-direction:column;
+    padding:36px;
+    border-radius:34px;
+    background:
+    linear-gradient(145deg,
+    rgba(255,122,133,.055),
+    rgba(255,255,255,.018) 38%,
+    rgba(8,8,8,.98) 100%),
+    linear-gradient(180deg,
+    rgba(18,18,18,.98),
+    rgba(6,6,6,1));
+    border:1px solid rgba(255,122,133,.16);
+    box-shadow:
+    0 22px 70px rgba(0,0,0,.62),
+    inset 0 1px 0 rgba(255,255,255,.035),
+    inset 0 -1px 0 rgba(255,122,133,.05);
+}
+
+#normasPage .conceptCard::after{
+    content:"";
+    position:absolute;
+    inset:1px;
+    border-radius:33px;
+    pointer-events:none;
+    background:
+    linear-gradient(135deg,
+    rgba(255,122,133,.16),
+    transparent 28%,
+    transparent 72%,
+    rgba(255,122,133,.055));
+    opacity:.45;
+    z-index:-1;
+}
+
+#normasPage .conceptCard:hover{
+    transform:translateY(-10px) scale(1.012);
+    border-color:rgba(255,122,133,.32);
+    box-shadow:
+    0 32px 90px rgba(0,0,0,.72),
+    0 0 55px rgba(255,122,133,.13),
+    inset 0 1px 0 rgba(255,255,255,.055);
+}
+
+#normasPage .conceptNumber{
+    width:max-content;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:9px 13px;
+    border-radius:999px;
+    background:rgba(255,122,133,.10);
+    border:1px solid rgba(255,122,133,.22);
+    color:#ff9ea6;
+    box-shadow:0 0 25px rgba(255,122,133,.08);
+}
+
+#normasPage .conceptCard h2{
+    margin-top:20px;
+    font-size:clamp(28px,2.2vw,40px);
+    letter-spacing:-1px;
+    line-height:1.05;
+}
+
+#normasPage .conceptCard > p{
+    margin-top:18px;
+    margin-bottom:0;
+    padding:18px 20px;
+    border-radius:22px;
+    background:rgba(255,255,255,.026);
+    border-left:3px solid rgba(255,122,133,.55);
+    color:rgba(255,255,255,.76);
+}
+
+#normasPage .conceptDivider{
+    margin:24px 0;
+    background:
+    linear-gradient(90deg,
+    transparent,
+    rgba(255,122,133,.35),
+    transparent);
+}
+
+#normasPage .conceptSection,
+#normasPage .tipBox{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+    padding:24px;
+    margin-bottom:18px;
+}
+
+#normasPage .conceptSection::before,
+#normasPage .tipBox::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+    opacity:.65;
+}
+
+#normasPage .conceptSection h3,
+#normasPage .tipBox h3{
+    font-size:18px;
+    letter-spacing:.2px;
+}
+
+#normasPage .conceptSection li,
+#normasPage .tipBox li{
+    position:relative;
+    padding-left:20px;
+    font-size:15.5px;
+    line-height:1.75;
+}
+
+#normasPage .conceptSection li::before,
+#normasPage .tipBox li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.72em;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:rgba(255,122,133,.8);
+    box-shadow:0 0 14px rgba(255,122,133,.45);
+}
+
+#normasPage .conceptSection:not(.bad){
+    background:
+    linear-gradient(180deg,
+    rgba(0,255,120,.09),
+    rgba(0,255,120,.045));
+    border:1px solid rgba(0,255,120,.22);
+}
+
+#normasPage .conceptSection.bad{
+    background:
+    linear-gradient(180deg,
+    rgba(255,0,0,.10),
+    rgba(255,0,0,.045));
+    border:1px solid rgba(255,70,70,.22);
+}
+
+#normasPage .tipBox{
+    background:
+    linear-gradient(180deg,
+    rgba(255,122,133,.10),
+    rgba(0,90,255,.055));
+    border:1px solid rgba(255,122,133,.18);
+}
+
+@media(max-width:800px){
+    #normasPage .conceptCard{
+        padding:28px;
+        border-radius:28px;
+    }
+
+    #normasPage .conceptCard h2{
+        font-size:30px;
+    }
+}
+
+
+
+/* =========================================================
+🔥 NORMAS COMPACTAS + MODAL DIFUMINADO
+Solo afecta la página de Normativas Oficiales
+========================================================= */
+
+#normasPage .compactNormas{
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:22px;
+}
+
+#normasPage .compactNormas .conceptCard{
+    min-height:250px;
+    max-height:285px;
+    padding:28px 28px 78px;
+    cursor:pointer;
+    overflow:hidden;
+    isolation:isolate;
+    transform:translateZ(0);
+}
+
+#normasPage .compactNormas .conceptCard:hover{
+    transform:translateY(-8px) scale(1.015);
+}
+
+#normasPage .compactNormas .conceptNumber{
+    font-size:11px;
+    padding:8px 12px;
+}
+
+#normasPage .compactNormas .conceptCard h2{
+    font-size:clamp(25px, 2vw, 34px);
+    line-height:1.08;
+    margin-top:18px;
+}
+
+#normasPage .compactNormas .conceptCard > p{
+    max-height:82px;
+    overflow:hidden;
+    margin-top:16px;
+    padding:16px 18px;
+    position:relative;
+}
+
+#normasPage .compactNormas .conceptCard > p::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:28px;
+    background:linear-gradient(180deg, transparent, rgba(8,8,8,.98));
+    pointer-events:none;
+}
+
+#normasPage .compactNormas .conceptCard > p::after{
+    display:none;
+}
+
+#normasPage .compactNormas .normOpenHint{
+    position:absolute;
+    left:28px;
+    right:28px;
+    bottom:24px;
+    min-height:43px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:18px;
+    color:#ffb6bd;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.9px;
+    background:
+    linear-gradient(135deg,
+    rgba(255,122,133,.16),
+    rgba(255,122,133,.055));
+    border:1px solid rgba(255,122,133,.28);
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.30),
+    0 0 22px rgba(255,122,133,.12),
+    inset 0 1px 0 rgba(255,255,255,.06);
+    z-index:5;
+    pointer-events:none;
+}
+
+#normasPage .compactNormas .normOpenHint::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:16px;
+    right:16px;
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+    opacity:.8;
+}
+
+#normasPage .compactNormas .conceptDivider,
+#normasPage .compactNormas .conceptSection,
+#normasPage .compactNormas .tipBox{
+    display:none !important;
+}
+
+#normasPage .compactNormas .conceptCard:focus-visible{
+    outline:2px solid rgba(255,122,133,.75);
+    outline-offset:5px;
+}
+
+body.normModalOpen{
+    overflow:hidden;
+}
+
+.normModal{
+    position:fixed;
+    inset:0;
+    z-index:20000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .28s ease, visibility .28s ease;
+}
+
+.normModal.active{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+.normModalBackdrop{
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top left, rgba(255,122,133,.18), transparent 30%),
+    rgba(0,0,0,.72);
+    backdrop-filter:blur(18px) saturate(140%);
+    -webkit-backdrop-filter:blur(18px) saturate(140%);
+}
+
+.normModalBox{
+    position:relative;
+    width:min(980px, 94vw);
+    max-height:86vh;
+    overflow-y:auto;
+    border-radius:36px;
+    padding:38px;
+    background:
+    linear-gradient(145deg, rgba(255,122,133,.075), rgba(255,255,255,.025) 34%, rgba(8,8,8,.98) 100%),
+    linear-gradient(180deg, rgba(18,18,18,.98), rgba(5,5,5,1));
+    border:1px solid rgba(255,122,133,.22);
+    box-shadow:
+    0 40px 120px rgba(0,0,0,.78),
+    0 0 80px rgba(255,122,133,.15),
+    inset 0 1px 0 rgba(255,255,255,.045);
+    animation:normModalReveal .35s cubic-bezier(.22,1,.36,1);
+}
+
+@keyframes normModalReveal{
+    from{
+        opacity:0;
+        transform:translateY(35px) scale(.96);
+        filter:blur(12px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+        filter:blur(0);
+    }
+}
+
+.normModalClose{
+    position:sticky;
+    top:0;
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:46px;
+    height:46px;
+    border-radius:16px;
+    border:1px solid rgba(255,122,133,.24);
+    background:rgba(255,122,133,.10);
+    color:#fff;
+    font-size:24px;
+    font-weight:900;
+    cursor:pointer;
+    z-index:5;
+    transition:.25s ease;
+}
+
+.normModalClose:hover{
+    transform:rotate(90deg) scale(1.05);
+    background:rgba(255,122,133,.18);
+    box-shadow:0 0 28px rgba(255,122,133,.18);
+}
+
+.normModalBody .conceptCard{
+    padding:0;
+    min-height:auto;
+    max-height:none;
+    overflow:visible;
+    background:transparent;
+    border:none;
+    box-shadow:none;
+    transform:none !important;
+}
+
+.normModalBody .conceptCard::before,
+.normModalBody .conceptCard::after{
+    display:none;
+}
+
+.normModalBody .conceptNumber{
+    width:max-content;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:9px 13px;
+    border-radius:999px;
+    background:rgba(255,122,133,.10);
+    border:1px solid rgba(255,122,133,.22);
+    color:#ff9ea6;
+    box-shadow:0 0 25px rgba(255,122,133,.08);
+}
+
+.normModalBody .conceptCard h2{
+    margin-top:20px;
+    font-size:clamp(36px, 5vw, 62px);
+    line-height:1;
+    letter-spacing:-2px;
+}
+
+.normModalBody .conceptCard > p{
+    margin-top:20px;
+    margin-bottom:0;
+    padding:20px 22px;
+    border-radius:22px;
+    background:rgba(255,255,255,.03);
+    border-left:3px solid rgba(255,122,133,.65);
+    color:rgba(255,255,255,.78);
+}
+
+.normModalBody .normOpenHint{
+    display:none !important;
+}
+
+.normModalBody .conceptDivider{
+    display:block;
+    height:1px;
+    margin:28px 0;
+    background:linear-gradient(90deg, transparent, rgba(255,122,133,.42), transparent);
+}
+
+.normModalBody .conceptSection,
+.normModalBody .tipBox{
+    display:block;
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+    padding:24px;
+    margin-bottom:18px;
+}
+
+.normModalBody .conceptSection::before,
+.normModalBody .tipBox::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+    opacity:.65;
+}
+
+.normModalBody .conceptSection:not(.bad){
+    background:linear-gradient(180deg, rgba(0,255,120,.09), rgba(0,255,120,.045));
+    border:1px solid rgba(0,255,120,.22);
+}
+
+.normModalBody .conceptSection.bad{
+    background:linear-gradient(180deg, rgba(255,0,0,.10), rgba(255,0,0,.045));
+    border:1px solid rgba(255,70,70,.22);
+}
+
+.normModalBody .tipBox{
+    background:linear-gradient(180deg, rgba(255,122,133,.10), rgba(0,90,255,.055));
+    border:1px solid rgba(255,122,133,.18);
+}
+
+.normModalBody .conceptSection h3,
+.normModalBody .tipBox h3{
+    font-size:19px;
+    margin-bottom:18px;
+}
+
+.normModalBody .conceptSection ul,
+.normModalBody .tipBox ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.normModalBody .conceptSection li,
+.normModalBody .tipBox li{
+    position:relative;
+    padding-left:20px;
+    color:rgba(255,255,255,.76);
+    font-size:16px;
+    line-height:1.75;
+}
+
+.normModalBody .conceptSection li::before,
+.normModalBody .tipBox li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.72em;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:rgba(255,122,133,.8);
+    box-shadow:0 0 14px rgba(255,122,133,.45);
+}
+
+@media(max-width:800px){
+    #normasPage .compactNormas{
+        grid-template-columns:1fr;
+    }
+
+    #normasPage .compactNormas .conceptCard{
+        min-height:235px;
+        max-height:285px;
+        padding-bottom:78px;
+    }
+
+    #normasPage .compactNormas .normOpenHint{
+        left:26px;
+        right:26px;
+        bottom:24px;
+    }
+
+    .normModal{
+        padding:16px;
+    }
+
+    .normModalBox{
+        padding:24px;
+        border-radius:28px;
+    }
+
+    .normModalBody .conceptCard h2{
+        font-size:34px;
+    }
+}
+
 </style>
 
 </head>
@@ -3293,7 +3834,7 @@ Describe acciones físicas visibles.
 </div>
 
 <!-- =====================================================
-🔥 NORMAS GENERALES COMPLETAS
+🔥 NORMATIVAS OFICIALES COMPLETAS — LA JUMPA RP
 ===================================================== -->
 
 <div class="page" id="normasPage">
@@ -3305,21 +3846,20 @@ Describe acciones físicas visibles.
 </button>
 
 <h1 class="pageTitle">
-Normas Generales
+Normativas Oficiales
 </h1>
 
 <p class="pageSub">
-Reglas oficiales de LA JUMPA RP.
-El desconocimiento de las normas no exime sanción.
+Reglas oficiales de LA JUMPA RP. El desconocimiento de las normas no exime sanción.
 </p>
 
 
 
-<div class="conceptsGrid">
+<div class="conceptsGrid compactNormas">
 
 
 <!-- =====================================================
-COMBATE
+NEGOCIOS
 ===================================================== -->
 
 <div class="conceptCard">
@@ -3329,42 +3869,116 @@ NOR 1
 </span>
 
 <h2>
-Combate RP
+🏢 Reglas de Negocios
 </h2>
 
 <p>
-
-Todo enfrentamiento debe tener contexto,
-rol previo y coherencia.
-
+Todo negocio de LA JUMPA RP debe funcionar con orden, rol coherente, respeto al cliente y control administrativo.
 </p>
+
+<span class="normOpenHint">CLICK PARA ABRIR</span>
 
 <div class="conceptDivider"></div>
 
 <div class="conceptSection">
 
 <h3>
-✅ Permitido
+✅ Profesionalismo
 </h3>
 
 <ul>
 
 <li>
-Disparar tras una amenaza clara.
+Tratar a los clientes con respeto y orden.
 </li>
 
 <li>
-Mantener rol previo.
+Mantener comportamiento coherente con el rol del negocio.
 </li>
 
 <li>
-Dar tiempo de reacción.
+No discutir, insultar ni provocar dentro del local.
 </li>
 
 </ul>
 
 </div>
 
+<div class="conceptSection">
+
+<h3>
+✅ Horarios y Servicio
+</h3>
+
+<ul>
+
+<li>
+Si el negocio está abierto, debe haber mínimo 1 empleado activo.
+</li>
+
+<li>
+Anunciar apertura y cierre en Discord, teléfono o medio IC si aplica.
+</li>
+
+<li>
+Si no hay empleados disponibles, el negocio debe considerarse cerrado.
+</li>
+
+</ul>
+
+</div>
+
+<div class="conceptSection">
+
+<h3>
+✅ Precios y Caja
+</h3>
+
+<ul>
+
+<li>
+Respetar la lista de precios aprobada por Staff o Dirección.
+</li>
+
+<li>
+Cada venta debe registrarse en la caja o sistema del negocio.
+</li>
+
+<li>
+El dueño debe revisar ingresos, reportes y movimientos del local.
+</li>
+
+</ul>
+
+</div>
+
+<div class="conceptSection">
+
+<h3>
+✅ Contratación y Funcionamiento
+</h3>
+
+<ul>
+
+<li>
+El dueño puede contratar o despedir empleados, siempre con rol.
+</li>
+
+<li>
+Mantener el negocio limpio, ordenado y seguro.
+</li>
+
+<li>
+Cooperar con PD cuando investiguen hechos ocurridos dentro del negocio.
+</li>
+
+<li>
+Llamar a la policía en asaltos, disturbios o emergencias.
+</li>
+
+</ul>
+
+</div>
 
 <div class="conceptSection bad">
 
@@ -3375,15 +3989,71 @@ Dar tiempo de reacción.
 <ul>
 
 <li>
-Disparar sin razón.
+Cobrar de más, estafar clientes o alterar precios sin autorización.
 </li>
 
 <li>
-Iniciar tiroteos por aburrimiento.
+Regalar productos a amigos, bandas o conocidos sin permiso del dueño.
 </li>
 
 <li>
-Matar sin contexto.
+Robar dinero del negocio o manipular la caja.
+</li>
+
+<li>
+Contratar personas buscadas por la policía sin razón IC lógica.
+</li>
+
+<li>
+Obligar empleados a realizar actividades ilegales.
+</li>
+
+<li>
+Usar el local para esconder criminales sin rol lógico.
+</li>
+
+<li>
+Permitir peleas, tiros o robos dentro del negocio sin intervención.
+</li>
+
+<li>
+Vender productos ilegales desde un negocio legal.
+</li>
+
+<li>
+Usar el negocio como tapadera criminal sin permiso de Staff.
+</li>
+
+<li>
+Mentir descaradamente a PD si existen cámaras o evidencia IC que lo contradiga.
+</li>
+
+<li>
+Hacer spam excesivo o atacar negocios rivales fuera del rol.
+</li>
+
+</ul>
+
+</div>
+
+<div class="tipBox">
+
+<h3>
+💡 Responsabilidad y Sanciones
+</h3>
+
+<ul>
+
+<li>
+El dueño debe mantener precios, normas y empleados bajo control.
+</li>
+
+<li>
+Si el negocio se usa con fines ilegales, el dueño puede asumir consecuencias.
+</li>
+
+<li>
+Las sanciones pueden incluir advertencia, multa económica, cierre temporal, cierre permanente o sanción administrativa.
 </li>
 
 </ul>
@@ -3393,9 +4063,8 @@ Matar sin contexto.
 </div>
 
 
-
 <!-- =====================================================
-POLICIA
+EMBARAZO
 ===================================================== -->
 
 <div class="conceptCard">
@@ -3405,61 +4074,195 @@ NOR 2
 </span>
 
 <h2>
-Policía
+🤰 Reglas de Embarazo
 </h2>
 
 <p>
-
-Las actuaciones policiales deben mantener
-profesionalismo y coherencia RP.
-
+El rol de embarazo en LA JUMPA RP debe ser serio, consensuado, registrado y supervisado cuando sea necesario.
 </p>
+
+<span class="normOpenHint">CLICK PARA ABRIR</span>
 
 <div class="conceptDivider"></div>
 
 <div class="conceptSection">
 
 <h3>
-✅ Correcto
+✅ Requisitos para Activar un Embarazo
 </h3>
 
 <ul>
 
 <li>
-Usar protocolos RP.
+Debe ser acordado entre ambos jugadores con consentimiento claro.
 </li>
 
 <li>
-Negociar situaciones.
+El embarazo debe tener sentido dentro del rol y no activarse por capricho.
 </li>
 
 <li>
-Mantener respeto.
+Debe informarse a Staff para su registro correspondiente.
+</li>
+
+<li>
+Los embarazos deben quedar registrados en un canal interno.
 </li>
 
 </ul>
 
 </div>
 
+<div class="conceptSection">
+
+<h3>
+✅ Duración y Progreso
+</h3>
+
+<ul>
+
+<li>
+El embarazo dura entre 5 y 7 días reales en LA JUMPA RP.
+</li>
+
+<li>
+Cada día representa una etapa del embarazo.
+</li>
+
+<li>
+No se pueden saltar días sin autorización de Staff.
+</li>
+
+</ul>
+
+</div>
+
+<div class="conceptSection">
+
+<h3>
+✅ Cuidados Obligatorios
+</h3>
+
+<ul>
+
+<li>
+Debe asistir al hospital al menos 2 veces durante el embarazo.
+</li>
+
+<li>
+El personaje puede necesitar reposo o medicación según el médico del rol.
+</li>
+
+<li>
+Si ocurre un accidente o situación grave, se debe llamar a EMS.
+</li>
+
+<li>
+EMS tiene la última palabra en decisiones médicas dentro del rol.
+</li>
+
+</ul>
+
+</div>
+
+<div class="conceptSection">
+
+<h3>
+✅ Parto y Bebé
+</h3>
+
+<ul>
+
+<li>
+El parto debe realizarse con EMS o personal médico.
+</li>
+
+<li>
+No se permiten partos improvisados sin rol médico, salvo emergencia justificada.
+</li>
+
+<li>
+Staff puede supervisar el parto si el rol lo requiere.
+</li>
+
+<li>
+El bebé no aparece como personaje jugable inmediatamente.
+</li>
+
+<li>
+El bebé se rolea como recién nacido mediante NPC, objeto o diálogo.
+</li>
+
+<li>
+Después de un tiempo, se puede permitir un hijo mayor si Staff lo aprueba.
+</li>
+
+</ul>
+
+</div>
 
 <div class="conceptSection bad">
 
 <h3>
-❌ Incorrecto
+❌ Prohibido
 </h3>
 
 <ul>
 
 <li>
-Abusar de poder.
+Activar embarazos de personajes menores de 18 años.
 </li>
 
 <li>
-Falta de rol policial.
+Participar en tiroteos, peleas o actividades de alto riesgo durante el embarazo.
 </li>
 
 <li>
-Usar fuerza sin motivo.
+Conducir a alta velocidad o realizar acrobacias.
+</li>
+
+<li>
+Consumir drogas o alcohol dentro del rol durante el embarazo.
+</li>
+
+<li>
+Usar el embarazo como escudo para evitar sanciones, arrestos o roles.
+</li>
+
+<li>
+Fingir embarazo sin registro.
+</li>
+
+<li>
+Cambiar de padre en mitad del rol sin justificación y aprobación.
+</li>
+
+<li>
+Abandonar el embarazo sin justificarlo en rol o con Staff.
+</li>
+
+</ul>
+
+</div>
+
+<div class="tipBox">
+
+<h3>
+💡 Control y Sanciones
+</h3>
+
+<ul>
+
+<li>
+Puede existir riesgo de pérdida del embarazo si el rol médico lo justifica.
+</li>
+
+<li>
+Cualquier problema debe hablarse con Dirección o Staff Médico.
+</li>
+
+<li>
+Incumplir estas reglas puede causar cancelación del embarazo o sanción administrativa.
 </li>
 
 </ul>
@@ -3469,9 +4272,8 @@ Usar fuerza sin motivo.
 </div>
 
 
-
 <!-- =====================================================
-ECONOMIA
+TALLER MECANICO
 ===================================================== -->
 
 <div class="conceptCard">
@@ -3481,38 +4283,112 @@ NOR 3
 </span>
 
 <h2>
-Economía
+🔧 Reglas del Taller Mecánico
 </h2>
 
 <p>
-
-La economía debe mantenerse estable
-y realista.
-
+El taller mecánico de LA JUMPA RP debe trabajar con rol, precios claros, respeto al cliente y uso responsable de herramientas.
 </p>
+
+<span class="normOpenHint">CLICK PARA ABRIR</span>
 
 <div class="conceptDivider"></div>
 
 <div class="conceptSection">
 
 <h3>
-✅ Permitido
+✅ Profesionalismo y Servicio
 </h3>
 
 <ul>
 
 <li>
-Negocios legales RP.
+Tratar a los clientes con respeto.
 </li>
 
 <li>
-Comercio coherente.
+No insultar, provocar ni discutir innecesariamente.
+</li>
+
+<li>
+Hablar y comportarse como un mecánico real dentro del rol.
+</li>
+
+<li>
+Cuando estés de servicio, debes mantenerte en el taller o en misiones relacionadas.
+</li>
+
+<li>
+Avisar cuando entres y salgas de servicio.
 </li>
 
 </ul>
 
 </div>
 
+<div class="conceptSection">
+
+<h3>
+✅ Precios, Reparaciones y Tuning
+</h3>
+
+<ul>
+
+<li>
+Respetar la lista de precios del taller: reparaciones, pintura, tuning y remolques.
+</li>
+
+<li>
+Todos los trabajos deben hacerse con rol, no de forma instantánea.
+</li>
+
+<li>
+Toda reparación requiere rol mínimo: inspección, herramientas y explicación.
+</li>
+
+<li>
+El tuning debe respetar la lógica del servidor.
+</li>
+
+<li>
+Mantener el taller limpio y organizado.
+</li>
+
+<li>
+Respetar rangos: Aprendiz → Mecánico → Jefe de Taller → Dueño.
+</li>
+
+</ul>
+
+</div>
+
+<div class="conceptSection">
+
+<h3>
+✅ Uso de Grúa / Remolque
+</h3>
+
+<ul>
+
+<li>
+Usar la grúa únicamente para vehículos dañados.
+</li>
+
+<li>
+Remolcar autos mal estacionados solo con autorización.
+</li>
+
+<li>
+Prestar asistencia a clientes cuando el rol lo requiera.
+</li>
+
+<li>
+Colaborar con EMS y PD en accidentes, bloqueos y remolques.
+</li>
+
+</ul>
+
+</div>
 
 <div class="conceptSection bad">
 
@@ -3523,15 +4399,83 @@ Comercio coherente.
 <ul>
 
 <li>
-Duplicar dinero.
+Participar en tiroteos, robos o actividades ilegales mientras llevas uniforme.
 </li>
 
 <li>
-Abusar de bugs económicos.
+Usar vehículos del taller para fines personales o ilegales.
 </li>
 
 <li>
-Transferencias irreales.
+Cobrar sobreprecio o regalar servicios sin permiso del encargado o dueño.
+</li>
+
+<li>
+Remolcar autos por diversión, causar caos o robar autos usando la grúa.
+</li>
+
+<li>
+Colocar mejoras prohibidas, extremas o fuera de lógica.
+</li>
+
+<li>
+Tunear autos gratis a amigos o bandas; esto se considera corrupción.
+</li>
+
+<li>
+Reparar en medio de un tiroteo o persecución sin rol.
+</li>
+
+<li>
+Usar el menú de mecánico para beneficiar criminales en escapes.
+</li>
+
+<li>
+Interferir en escenas policiales sin ser llamado.
+</li>
+
+<li>
+Ayudar a esconder autos buscados.
+</li>
+
+<li>
+Vender autos ilegales o duplicados.
+</li>
+
+<li>
+Usar el taller como guarida criminal.
+</li>
+
+<li>
+Usar herramientas para romper rol, por ejemplo bajar coches en persecución.
+</li>
+
+</ul>
+
+</div>
+
+<div class="tipBox">
+
+<h3>
+💡 Sanciones
+</h3>
+
+<ul>
+
+<li>
+Advertencia.
+</li>
+
+<li>
+Suspensión del trabajo mecánico.
+</li>
+
+<li>
+Expulsión del taller.
+</li>
+
+<li>
+Sanción administrativa si afecta al servidor.
 </li>
 
 </ul>
@@ -3541,9 +4485,8 @@ Transferencias irreales.
 </div>
 
 
-
 <!-- =====================================================
-TOXICIDAD
+ROL DELICTIVO
 ===================================================== -->
 
 <div class="conceptCard">
@@ -3553,258 +4496,144 @@ NOR 4
 </span>
 
 <h2>
-Toxicidad
+🕶️ Reglas del Rol Delictivo
 </h2>
 
 <p>
-
-Se debe mantener respeto
-hacia todos los jugadores.
-
+Todo acto criminal en LA JUMPA RP debe tener contexto, rol previo, lógica y respeto por la experiencia de los demás jugadores.
 </p>
+
+<span class="normOpenHint">CLICK PARA ABRIR</span>
 
 <div class="conceptDivider"></div>
 
 <div class="conceptSection">
 
 <h3>
-✅ Correcto
+✅ Profesionalismo Criminal
 </h3>
 
 <ul>
 
 <li>
-Mantener respeto OOC.
+Todo acto criminal debe tener rol: robo, secuestro, ajuste, amenaza o conflicto.
 </li>
 
 <li>
-Resolver conflictos con staff.
+Mantener una historia coherente con la banda o personaje.
+</li>
+
+<li>
+Las armas deben usarse solo cuando el rol lo justifique.
+</li>
+
+<li>
+Guardar armas en zonas seguras y no cargarlas siempre sin sentido.
 </li>
 
 </ul>
 
 </div>
-
-
-<div class="conceptSection bad">
-
-<h3>
-❌ Incorrecto
-</h3>
-
-<ul>
-
-<li>
-Insultos OOC.
-</li>
-
-<li>
-Acoso constante.
-</li>
-
-<li>
-Toxicidad en chats.
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-
-<!-- =====================================================
-STREAMERS
-===================================================== -->
-
-<div class="conceptCard">
-
-<span class="conceptNumber">
-NOR 5
-</span>
-
-<h2>
-Streamers
-</h2>
-
-<p>
-
-Los streamers deben mantener
-la inmersión RP.
-
-</p>
-
-<div class="conceptDivider"></div>
 
 <div class="conceptSection">
 
 <h3>
-✅ Correcto
+✅ Secuestros
 </h3>
 
 <ul>
 
 <li>
-Ocultar información sensible.
+Máximo 1 secuestro cada 30 a 40 minutos por banda.
 </li>
 
 <li>
-Mantener rol serio.
+Debe existir motivo válido: deudas, traición, guerra o información.
+</li>
+
+<li>
+El secuestrado debe tener posibilidad de rol; no se debe matar de inmediato.
 </li>
 
 </ul>
 
 </div>
-
-
-<div class="conceptSection bad">
-
-<h3>
-❌ Incorrecto
-</h3>
-
-<ul>
-
-<li>
-Usar chat para ventaja.
-</li>
-
-<li>
-Revelar ubicaciones.
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-
-<!-- =====================================================
-ORGANIZACIONES
-===================================================== -->
-
-<div class="conceptCard">
-
-<span class="conceptNumber">
-NOR 6
-</span>
-
-<h2>
-Organizaciones
-</h2>
-
-<p>
-
-Las organizaciones deben mantener
-actividad RP coherente.
-
-</p>
-
-<div class="conceptDivider"></div>
 
 <div class="conceptSection">
 
 <h3>
-✅ Correcto
+✅ Robos
 </h3>
 
 <ul>
 
 <li>
-Mantener jerarquía.
+Los robos a civiles solo se permiten si existe motivo: dinero, información o ajuste.
 </li>
 
 <li>
-Roles organizados.
+No abusar ni hacer robos en cadena.
 </li>
 
 <li>
-Respeto interno.
+Los robos a negocios deben hacerse con rol y organización.
+</li>
+
+<li>
+No se debe forzar el roleplay del dueño del negocio.
+</li>
+
+<li>
+Los robos mayores como banco o joyería deben cumplir el mínimo de miembros establecido por el servidor.
+</li>
+
+<li>
+Los robos mayores requieren negociación con la policía.
 </li>
 
 </ul>
 
 </div>
-
-
-<div class="conceptSection bad">
-
-<h3>
-❌ Incorrecto
-</h3>
-
-<ul>
-
-<li>
-Abuso masivo.
-</li>
-
-<li>
-Antirol organizado.
-</li>
-
-<li>
-Toxicidad grupal.
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-
-<!-- =====================================================
-ROBOS
-===================================================== -->
-
-<div class="conceptCard">
-
-<span class="conceptNumber">
-NOR 7
-</span>
-
-<h2>
-Robos
-</h2>
-
-<p>
-
-Todo robo debe mantener lógica
-y rol previo.
-
-</p>
-
-<div class="conceptDivider"></div>
 
 <div class="conceptSection">
 
 <h3>
-✅ Permitido
+✅ Trato con PD, Vehículos y Guerras
 </h3>
 
 <ul>
 
 <li>
-Amenaza verbal RP.
+Se puede negociar, huir o rendirse según la situación.
 </li>
 
 <li>
-Contexto previo.
+Si estás rodeado sin escape, debes rolear captura y no desconectar.
 </li>
 
 <li>
-Tiempo de reacción.
+Las guerras entre bandas deben ser aprobadas por Staff o Dirección.
+</li>
+
+<li>
+No atacar fuera del territorio enemigo sin motivo.
+</li>
+
+<li>
+Respetar cooldowns entre enfrentamientos.
+</li>
+
+<li>
+El cultivo, distribución y venta de droga deben tener rol mínimo.
+</li>
+
+<li>
+Si PD llega a una escena de droga, se debe rolear: escapar, esconderse o negociar.
 </li>
 
 </ul>
 
 </div>
-
 
 <div class="conceptSection bad">
 
@@ -3815,198 +4644,95 @@ Tiempo de reacción.
 <ul>
 
 <li>
-Robar recién conectados.
+Hacer DM, RDM o matar sin razón.
 </li>
 
 <li>
-Robos sin rol.
+Disparar por diversión, al azar o sin propósito.
 </li>
 
 <li>
-Spam de robos.
+Atropellar por diversión o usar vehículos como armas sin rol.
+</li>
+
+<li>
+Secuestrar en zona segura: hospital, PD, mecánico, banco, ayuntamiento u oficinas públicas.
+</li>
+
+<li>
+Realizar robos, disparos, secuestros o amenazas en zonas seguras.
+</li>
+
+<li>
+Iniciar tiroteos contra la policía sin motivo.
+</li>
+
+<li>
+Insultar a la policía fuera del rol.
+</li>
+
+<li>
+Usar vehículos irreales para actos criminales: super autos o coches exagerados.
+</li>
+
+<li>
+Abusar de motos para escapar si la situación no lo justifica.
+</li>
+
+<li>
+Usar autos tuneados al máximo para romper la lógica del servidor.
+</li>
+
+<li>
+Hacer KOS a menos que esté declarado oficialmente.
+</li>
+
+<li>
+Vender droga en zonas seguras.
+</li>
+
+<li>
+Forzar rol, exigir cosas imposibles o manipular escenas.
+</li>
+
+<li>
+Desconectar para evitar arresto, muerte o consecuencias RP.
+</li>
+
+<li>
+Abusar de bugs, exploits, duplicaciones o zonas inaccesibles.
 </li>
 
 </ul>
 
 </div>
-
-</div>
-
-
-
-<!-- =====================================================
-VEHICULOS
-===================================================== -->
-
-<div class="conceptCard">
-
-<span class="conceptNumber">
-NOR 8
-</span>
-
-<h2>
-Vehículos
-</h2>
-
-<p>
-
-La conducción debe mantener
-coherencia RP.
-
-</p>
-
-<div class="conceptDivider"></div>
-
-<div class="conceptSection">
-
-<h3>
-✅ Correcto
-</h3>
-
-<ul>
-
-<li>
-Conducir coherentemente.
-</li>
-
-<li>
-Respetar daños.
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="conceptSection bad">
-
-<h3>
-❌ Incorrecto
-</h3>
-
-<ul>
-
-<li>
-Conducción arcade extrema.
-</li>
-
-<li>
-Usar vehículos como armas.
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-
-<!-- =====================================================
-STAFF
-===================================================== -->
-
-<div class="conceptCard">
-
-<span class="conceptNumber">
-NOR 9
-</span>
-
-<h2>
-Staff
-</h2>
-
-<p>
-
-Las decisiones administrativas
-deben respetarse.
-
-</p>
-
-<div class="conceptDivider"></div>
 
 <div class="tipBox">
 
 <h3>
-💡 Importante
+💡 Sanciones
 </h3>
 
 <ul>
 
 <li>
-Los reportes deben hacerse con respeto.
+Advertencia.
 </li>
 
 <li>
-Mentir al staff agrava sanciones.
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-
-<!-- =====================================================
-FAIRPLAY
-===================================================== -->
-
-<div class="conceptCard">
-
-<span class="conceptNumber">
-NOR 10
-</span>
-
-<h2>
-Fair Play
-</h2>
-
-<p>
-
-El objetivo es crear historias,
-no ganar siempre.
-
-</p>
-
-<div class="conceptDivider"></div>
-
-<div class="conceptSection">
-
-<h3>
-✅ Correcto
-</h3>
-
-<ul>
-
-<li>
-Aceptar derrotas RP.
+Pérdida de armas o inventario.
 </li>
 
 <li>
-Mantener escenas fluidas.
-</li>
-
-</ul>
-
-</div>
-
-
-<div class="conceptSection bad">
-
-<h3>
-❌ Incorrecto
-</h3>
-
-<ul>
-
-<li>
-Buscar solo ventaja.
+Suspensión del personaje.
 </li>
 
 <li>
-Romper rol por ganar.
+Expulsión de la banda.
+</li>
+
+<li>
+Ban temporal o permanente según la gravedad.
 </li>
 
 </ul>
@@ -4178,6 +4904,28 @@ CIERRE PAGES SYSTEM
 
 </div>
 
+
+
+<!-- =====================================================
+MODAL NORMATIVAS — SECCIÓN INDIVIDUAL
+===================================================== -->
+
+<div class="normModal" id="normModal" aria-hidden="true">
+
+    <div class="normModalBackdrop" data-norm-close></div>
+
+    <div class="normModalBox" role="dialog" aria-modal="true" aria-label="Normativa seleccionada">
+
+        <button class="normModalClose" type="button" data-norm-close aria-label="Cerrar normativa">
+            ×
+        </button>
+
+        <div class="normModalBody" id="normModalBody"></div>
+
+    </div>
+
+</div>
+
 <script>
 function openPage(pageId){
 
@@ -4287,6 +5035,84 @@ subBtns.forEach(btn => {
         .classList.add('active');
 
     });
+
+});
+
+
+
+/* =========================================================
+NORMATIVAS COMPACTAS + MODAL DIFUMINADO
+========================================================= */
+
+const normCards =
+document.querySelectorAll('#normasPage .compactNormas .conceptCard');
+
+const normModal =
+document.getElementById('normModal');
+
+const normModalBody =
+document.getElementById('normModalBody');
+
+function openNormModal(card){
+
+    if(!normModal || !normModalBody) return;
+
+    const clone =
+    card.cloneNode(true);
+
+    clone.removeAttribute('tabindex');
+    clone.removeAttribute('role');
+
+    normModalBody.innerHTML = '';
+    normModalBody.appendChild(clone);
+
+    normModal.classList.add('active');
+    normModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('normModalOpen');
+}
+
+function closeNormModal(){
+
+    if(!normModal) return;
+
+    normModal.classList.remove('active');
+    normModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('normModalOpen');
+}
+
+normCards.forEach(card => {
+
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+
+    card.addEventListener('click', () => {
+        openNormModal(card);
+    });
+
+    card.addEventListener('keydown', (event) => {
+
+        if(event.key === 'Enter' || event.key === ' '){
+            event.preventDefault();
+            openNormModal(card);
+        }
+
+    });
+
+});
+
+document
+.querySelectorAll('[data-norm-close]')
+.forEach(btn => {
+
+    btn.addEventListener('click', closeNormModal);
+
+});
+
+document.addEventListener('keydown', (event) => {
+
+    if(event.key === 'Escape'){
+        closeNormModal();
+    }
 
 });
 
