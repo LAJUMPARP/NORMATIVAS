@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="es">
 <head>
 
@@ -1757,547 +1758,6 @@ CARD REVEAL
         blur(0);
     }
 }
-
-
-/* =========================================================
-🔥 RETOQUE PREMIUM — CONTENEDORES DE NORMAS
-Solo afecta la página de Normas Generales
-========================================================= */
-
-#normasPage .conceptsGrid{
-    gap:30px;
-    align-items:stretch;
-}
-
-#normasPage .conceptCard{
-    min-height:100%;
-    display:flex;
-    flex-direction:column;
-    padding:36px;
-    border-radius:34px;
-    background:
-    linear-gradient(145deg,
-    rgba(255,122,133,.055),
-    rgba(255,255,255,.018) 38%,
-    rgba(8,8,8,.98) 100%),
-    linear-gradient(180deg,
-    rgba(18,18,18,.98),
-    rgba(6,6,6,1));
-    border:1px solid rgba(255,122,133,.16);
-    box-shadow:
-    0 22px 70px rgba(0,0,0,.62),
-    inset 0 1px 0 rgba(255,255,255,.035),
-    inset 0 -1px 0 rgba(255,122,133,.05);
-}
-
-#normasPage .conceptCard::after{
-    content:"";
-    position:absolute;
-    inset:1px;
-    border-radius:33px;
-    pointer-events:none;
-    background:
-    linear-gradient(135deg,
-    rgba(255,122,133,.16),
-    transparent 28%,
-    transparent 72%,
-    rgba(255,122,133,.055));
-    opacity:.45;
-    z-index:-1;
-}
-
-#normasPage .conceptCard:hover{
-    transform:translateY(-10px) scale(1.012);
-    border-color:rgba(255,122,133,.32);
-    box-shadow:
-    0 32px 90px rgba(0,0,0,.72),
-    0 0 55px rgba(255,122,133,.13),
-    inset 0 1px 0 rgba(255,255,255,.055);
-}
-
-#normasPage .conceptNumber{
-    width:max-content;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:9px 13px;
-    border-radius:999px;
-    background:rgba(255,122,133,.10);
-    border:1px solid rgba(255,122,133,.22);
-    color:#ff9ea6;
-    box-shadow:0 0 25px rgba(255,122,133,.08);
-}
-
-#normasPage .conceptCard h2{
-    margin-top:20px;
-    font-size:clamp(28px,2.2vw,40px);
-    letter-spacing:-1px;
-    line-height:1.05;
-}
-
-#normasPage .conceptCard > p{
-    margin-top:18px;
-    margin-bottom:0;
-    padding:18px 20px;
-    border-radius:22px;
-    background:rgba(255,255,255,.026);
-    border-left:3px solid rgba(255,122,133,.55);
-    color:rgba(255,255,255,.76);
-}
-
-#normasPage .conceptDivider{
-    margin:24px 0;
-    background:
-    linear-gradient(90deg,
-    transparent,
-    rgba(255,122,133,.35),
-    transparent);
-}
-
-#normasPage .conceptSection,
-#normasPage .tipBox{
-    position:relative;
-    overflow:hidden;
-    border-radius:24px;
-    padding:24px;
-    margin-bottom:18px;
-}
-
-#normasPage .conceptSection::before,
-#normasPage .tipBox::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:1px;
-    background:linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
-    opacity:.65;
-}
-
-#normasPage .conceptSection h3,
-#normasPage .tipBox h3{
-    font-size:18px;
-    letter-spacing:.2px;
-}
-
-#normasPage .conceptSection li,
-#normasPage .tipBox li{
-    position:relative;
-    padding-left:20px;
-    font-size:15.5px;
-    line-height:1.75;
-}
-
-#normasPage .conceptSection li::before,
-#normasPage .tipBox li::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:.72em;
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:rgba(255,122,133,.8);
-    box-shadow:0 0 14px rgba(255,122,133,.45);
-}
-
-#normasPage .conceptSection:not(.bad){
-    background:
-    linear-gradient(180deg,
-    rgba(0,255,120,.09),
-    rgba(0,255,120,.045));
-    border:1px solid rgba(0,255,120,.22);
-}
-
-#normasPage .conceptSection.bad{
-    background:
-    linear-gradient(180deg,
-    rgba(255,0,0,.10),
-    rgba(255,0,0,.045));
-    border:1px solid rgba(255,70,70,.22);
-}
-
-#normasPage .tipBox{
-    background:
-    linear-gradient(180deg,
-    rgba(255,122,133,.10),
-    rgba(0,90,255,.055));
-    border:1px solid rgba(255,122,133,.18);
-}
-
-@media(max-width:800px){
-    #normasPage .conceptCard{
-        padding:28px;
-        border-radius:28px;
-    }
-
-    #normasPage .conceptCard h2{
-        font-size:30px;
-    }
-}
-
-
-
-/* =========================================================
-🔥 NORMAS COMPACTAS + MODAL DIFUMINADO
-Solo afecta la página de Normativas Oficiales
-========================================================= */
-
-#normasPage .compactNormas{
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:22px;
-}
-
-#normasPage .compactNormas .conceptCard{
-    min-height:250px;
-    max-height:285px;
-    padding:28px 28px 78px;
-    cursor:pointer;
-    overflow:hidden;
-    isolation:isolate;
-    transform:translateZ(0);
-}
-
-#normasPage .compactNormas .conceptCard:hover{
-    transform:translateY(-8px) scale(1.015);
-}
-
-#normasPage .compactNormas .conceptNumber{
-    font-size:11px;
-    padding:8px 12px;
-}
-
-#normasPage .compactNormas .conceptCard h2{
-    font-size:clamp(25px, 2vw, 34px);
-    line-height:1.08;
-    margin-top:18px;
-}
-
-#normasPage .compactNormas .conceptCard > p{
-    max-height:82px;
-    overflow:hidden;
-    margin-top:16px;
-    padding:16px 18px;
-    position:relative;
-}
-
-#normasPage .compactNormas .conceptCard > p::before{
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    height:28px;
-    background:linear-gradient(180deg, transparent, rgba(8,8,8,.98));
-    pointer-events:none;
-}
-
-#normasPage .compactNormas .conceptCard > p::after{
-    display:none;
-}
-
-#normasPage .compactNormas .normOpenHint{
-    position:absolute;
-    left:28px;
-    right:28px;
-    bottom:24px;
-    min-height:43px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:18px;
-    color:#ffb6bd;
-    font-size:10px;
-    font-weight:900;
-    letter-spacing:.9px;
-    background:
-    linear-gradient(135deg,
-    rgba(255,122,133,.16),
-    rgba(255,122,133,.055));
-    border:1px solid rgba(255,122,133,.28);
-    box-shadow:
-    0 12px 30px rgba(0,0,0,.30),
-    0 0 22px rgba(255,122,133,.12),
-    inset 0 1px 0 rgba(255,255,255,.06);
-    z-index:5;
-    pointer-events:none;
-}
-
-#normasPage .compactNormas .normOpenHint::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:16px;
-    right:16px;
-    height:1px;
-    background:linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
-    opacity:.8;
-}
-
-#normasPage .compactNormas .conceptDivider,
-#normasPage .compactNormas .conceptSection,
-#normasPage .compactNormas .tipBox{
-    display:none !important;
-}
-
-#normasPage .compactNormas .conceptCard:focus-visible{
-    outline:2px solid rgba(255,122,133,.75);
-    outline-offset:5px;
-}
-
-body.normModalOpen{
-    overflow:hidden;
-}
-
-.normModal{
-    position:fixed;
-    inset:0;
-    z-index:20000;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:28px;
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-    transition:opacity .28s ease, visibility .28s ease;
-}
-
-.normModal.active{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
-}
-
-.normModalBackdrop{
-    position:absolute;
-    inset:0;
-    background:
-    radial-gradient(circle at top left, rgba(255,122,133,.18), transparent 30%),
-    rgba(0,0,0,.72);
-    backdrop-filter:blur(18px) saturate(140%);
-    -webkit-backdrop-filter:blur(18px) saturate(140%);
-}
-
-.normModalBox{
-    position:relative;
-    width:min(980px, 94vw);
-    max-height:86vh;
-    overflow-y:auto;
-    border-radius:36px;
-    padding:38px;
-    background:
-    linear-gradient(145deg, rgba(255,122,133,.075), rgba(255,255,255,.025) 34%, rgba(8,8,8,.98) 100%),
-    linear-gradient(180deg, rgba(18,18,18,.98), rgba(5,5,5,1));
-    border:1px solid rgba(255,122,133,.22);
-    box-shadow:
-    0 40px 120px rgba(0,0,0,.78),
-    0 0 80px rgba(255,122,133,.15),
-    inset 0 1px 0 rgba(255,255,255,.045);
-    animation:normModalReveal .35s cubic-bezier(.22,1,.36,1);
-}
-
-@keyframes normModalReveal{
-    from{
-        opacity:0;
-        transform:translateY(35px) scale(.96);
-        filter:blur(12px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0) scale(1);
-        filter:blur(0);
-    }
-}
-
-.normModalClose{
-    position:sticky;
-    top:0;
-    margin-left:auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:46px;
-    height:46px;
-    border-radius:16px;
-    border:1px solid rgba(255,122,133,.24);
-    background:rgba(255,122,133,.10);
-    color:#fff;
-    font-size:24px;
-    font-weight:900;
-    cursor:pointer;
-    z-index:5;
-    transition:.25s ease;
-}
-
-.normModalClose:hover{
-    transform:rotate(90deg) scale(1.05);
-    background:rgba(255,122,133,.18);
-    box-shadow:0 0 28px rgba(255,122,133,.18);
-}
-
-.normModalBody .conceptCard{
-    padding:0;
-    min-height:auto;
-    max-height:none;
-    overflow:visible;
-    background:transparent;
-    border:none;
-    box-shadow:none;
-    transform:none !important;
-}
-
-.normModalBody .conceptCard::before,
-.normModalBody .conceptCard::after{
-    display:none;
-}
-
-.normModalBody .conceptNumber{
-    width:max-content;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:9px 13px;
-    border-radius:999px;
-    background:rgba(255,122,133,.10);
-    border:1px solid rgba(255,122,133,.22);
-    color:#ff9ea6;
-    box-shadow:0 0 25px rgba(255,122,133,.08);
-}
-
-.normModalBody .conceptCard h2{
-    margin-top:20px;
-    font-size:clamp(36px, 5vw, 62px);
-    line-height:1;
-    letter-spacing:-2px;
-}
-
-.normModalBody .conceptCard > p{
-    margin-top:20px;
-    margin-bottom:0;
-    padding:20px 22px;
-    border-radius:22px;
-    background:rgba(255,255,255,.03);
-    border-left:3px solid rgba(255,122,133,.65);
-    color:rgba(255,255,255,.78);
-}
-
-.normModalBody .normOpenHint{
-    display:none !important;
-}
-
-.normModalBody .conceptDivider{
-    display:block;
-    height:1px;
-    margin:28px 0;
-    background:linear-gradient(90deg, transparent, rgba(255,122,133,.42), transparent);
-}
-
-.normModalBody .conceptSection,
-.normModalBody .tipBox{
-    display:block;
-    position:relative;
-    overflow:hidden;
-    border-radius:24px;
-    padding:24px;
-    margin-bottom:18px;
-}
-
-.normModalBody .conceptSection::before,
-.normModalBody .tipBox::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:1px;
-    background:linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
-    opacity:.65;
-}
-
-.normModalBody .conceptSection:not(.bad){
-    background:linear-gradient(180deg, rgba(0,255,120,.09), rgba(0,255,120,.045));
-    border:1px solid rgba(0,255,120,.22);
-}
-
-.normModalBody .conceptSection.bad{
-    background:linear-gradient(180deg, rgba(255,0,0,.10), rgba(255,0,0,.045));
-    border:1px solid rgba(255,70,70,.22);
-}
-
-.normModalBody .tipBox{
-    background:linear-gradient(180deg, rgba(255,122,133,.10), rgba(0,90,255,.055));
-    border:1px solid rgba(255,122,133,.18);
-}
-
-.normModalBody .conceptSection h3,
-.normModalBody .tipBox h3{
-    font-size:19px;
-    margin-bottom:18px;
-}
-
-.normModalBody .conceptSection ul,
-.normModalBody .tipBox ul{
-    list-style:none;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-}
-
-.normModalBody .conceptSection li,
-.normModalBody .tipBox li{
-    position:relative;
-    padding-left:20px;
-    color:rgba(255,255,255,.76);
-    font-size:16px;
-    line-height:1.75;
-}
-
-.normModalBody .conceptSection li::before,
-.normModalBody .tipBox li::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:.72em;
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:rgba(255,122,133,.8);
-    box-shadow:0 0 14px rgba(255,122,133,.45);
-}
-
-@media(max-width:800px){
-    #normasPage .compactNormas{
-        grid-template-columns:1fr;
-    }
-
-    #normasPage .compactNormas .conceptCard{
-        min-height:235px;
-        max-height:285px;
-        padding-bottom:78px;
-    }
-
-    #normasPage .compactNormas .normOpenHint{
-        left:26px;
-        right:26px;
-        bottom:24px;
-    }
-
-    .normModal{
-        padding:16px;
-    }
-
-    .normModalBox{
-        padding:24px;
-        border-radius:28px;
-    }
-
-    .normModalBody .conceptCard h2{
-        font-size:34px;
-    }
-}
-
 </style>
 
 </head>
@@ -2305,7 +1765,6 @@ body.normModalOpen{
 <body>
 
 <div class="bgGlow"></div>
-
 
 <!-- =====================================================
 NAVBAR
@@ -2334,8 +1793,6 @@ Zonas Seguras
 </button>
 
 </nav>
-
-
 
 <!-- =====================================================
 HERO
@@ -2367,7 +1824,6 @@ Normativas Oficiales • FiveM
 
 </div>
 
-
 <div class="tags">
 
 <div class="tag">
@@ -2388,16 +1844,12 @@ LA JUMPA RP
 
 </div>
 
-
 <h1 class="heroTitle">
 
-NORMATIVAS
-<span>
-LA JUMPA RP
-</span>
+NORMATIVAS <span>
+LA JUMPA RP </span>
 
 </h1>
-
 
 <p class="heroText">
 
@@ -2405,7 +1857,6 @@ Reglas claras, rol serio y progresivo.
 El desconocimiento de las normas no exime de sanción.
 
 </p>
-
 
 <div class="heroButtons">
 
@@ -2429,7 +1880,6 @@ Ver Normativas
 </div>
 
 </div>
-
 
 <div class="videoCard">
 
@@ -2459,15 +1909,11 @@ Servidor cinematográfico • RP libre
 
 </section>
 
-
-
-
 <!-- =====================================================
 PAGES SYSTEM
 ===================================================== -->
 
 <div class="pagesSystem">
-
 
 <!-- =====================================================
 CONCEPTOS
@@ -2488,8 +1934,6 @@ Conceptos Básicos
 <p class="pageSub">
 Todo lo necesario para mantener un rol limpio y cinematográfico.
 </p>
-
-
 
 <!-- =====================================================
 SUBMENU
@@ -2539,7 +1983,6 @@ Fair Play
 
 </div>
 
-
 <!-- =====================================================
 MG
 ===================================================== -->
@@ -2573,7 +2016,6 @@ para beneficiar o afectar tu personaje.
 
 </p>
 
-
 <div class="compareGrid">
 
 <div class="goodBox">
@@ -2599,7 +2041,6 @@ No usar Discord durante escenas.
 </ul>
 
 </div>
-
 
 <div class="badBox">
 
@@ -2627,7 +2068,6 @@ Reconocer voces OOC.
 
 </div>
 
-
 <div class="tipBox">
 
 <h3>
@@ -2651,8 +2091,6 @@ Todo lo externo es OOC.
 </div>
 
 </div>
-
-
 
 <!-- =====================================================
 PG
@@ -2686,7 +2124,6 @@ Realizar acciones imposibles o irreales.
 
 </p>
 
-
 <div class="compareGrid">
 
 <div class="goodBox">
@@ -2708,7 +2145,6 @@ Dar tiempo de reacción.
 </ul>
 
 </div>
-
 
 <div class="badBox">
 
@@ -2736,147 +2172,111 @@ Saltar edificios irreales.
 
 </div>
 
-
-
 <!-- =====================================================
 NVVPJ
 ===================================================== -->
 
 <div class="subContent" id="nvvpj">
 
-    <div class="subContentCard">
+```
+<div class="subContentCard">
 
-        <div class="subHeader">
+    <div class="subHeader">
 
-            <div>
+        <div>
 
-                <span class="subMini">
-                    CON 3
-                </span>
+            <span class="subMini">
+                CON 3
+            </span>
 
-                <h2>
-                    NVVPJ
-                </h2>
-
-            </div>
-
-        </div>
-
-        <div class="subDivider"></div>
-
-        <p>
-
-            NVVPJ significa “No Valorar la Vida de Tu Personaje”.
-            Tu personaje debe actuar con miedo, lógica y supervivencia,
-            tal como lo haría una persona real en situaciones peligrosas.
-
-        </p>
-
-
-        <div class="compareGrid">
-
-            <!-- ========================================= -->
-            <!-- CORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="goodBox">
-
-                <h3>
-                    ✅ Correcto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Rendirse cuando estás rodeado.
-                    </li>
-
-                    <li>
-                        Priorizar tu supervivencia.
-                    </li>
-
-                    <li>
-                        Tener miedo durante amenazas armadas.
-                    </li>
-
-                    <li>
-                        Buscar escapar antes de pelear.
-                    </li>
-
-                    <li>
-                        Cooperar si tu vida está en riesgo.
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- ========================================= -->
-            <!-- INCORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="badBox">
-
-                <h3>
-                    ❌ Incorrecto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Enfrentar solo a varios sujetos armados.
-                    </li>
-
-                    <li>
-                        Ignorar armas apuntándote.
-                    </li>
-
-                    <li>
-                        Actuar sin miedo constantemente.
-                    </li>
-
-                    <li>
-                        Provocar tiroteos innecesarios.
-                    </li>
-
-                    <li>
-                        Lanzarte contra policías armado únicamente con puños.
-                    </li>
-
-                </ul>
-
-            </div>
+            <h2>
+                NVVPJ
+            </h2>
 
         </div>
 
+    </div>
+
+    <div class="subDivider"></div>
+
+    <p>
+
+        NVVPJ significa “No Valorar la Vida de Tu Personaje”.
+        Tu personaje debe actuar con miedo, lógica y supervivencia,
+        tal como lo haría una persona real en situaciones peligrosas.
+
+    </p>
+
+
+    <div class="compareGrid">
 
         <!-- ========================================= -->
-        <!-- CONSEJOS -->
+        <!-- CORRECTO -->
         <!-- ========================================= -->
 
-        <div class="tipBox">
+        <div class="goodBox">
 
             <h3>
-                💡 Consejos
+                ✅ Correcto
             </h3>
 
             <ul>
 
                 <li>
-                    Tu personaje siente miedo, dolor y presión.
+                    Rendirse cuando estás rodeado.
                 </li>
 
                 <li>
-                    Piensa siempre cómo actuaría una persona real.
+                    Priorizar tu supervivencia.
                 </li>
 
                 <li>
-                    Valorar tu vida mejora la calidad del RP.
+                    Tener miedo durante amenazas armadas.
                 </li>
 
                 <li>
-                    No todo se resuelve disparando.
+                    Buscar escapar antes de pelear.
+                </li>
+
+                <li>
+                    Cooperar si tu vida está en riesgo.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- INCORRECTO -->
+        <!-- ========================================= -->
+
+        <div class="badBox">
+
+            <h3>
+                ❌ Incorrecto
+            </h3>
+
+            <ul>
+
+                <li>
+                    Enfrentar solo a varios sujetos armados.
+                </li>
+
+                <li>
+                    Ignorar armas apuntándote.
+                </li>
+
+                <li>
+                    Actuar sin miedo constantemente.
+                </li>
+
+                <li>
+                    Provocar tiroteos innecesarios.
+                </li>
+
+                <li>
+                    Lanzarte contra policías armado únicamente con puños.
                 </li>
 
             </ul>
@@ -2885,9 +2285,43 @@ NVVPJ
 
     </div>
 
+
+    <!-- ========================================= -->
+    <!-- CONSEJOS -->
+    <!-- ========================================= -->
+
+    <div class="tipBox">
+
+        <h3>
+            💡 Consejos
+        </h3>
+
+        <ul>
+
+            <li>
+                Tu personaje siente miedo, dolor y presión.
+            </li>
+
+            <li>
+                Piensa siempre cómo actuaría una persona real.
+            </li>
+
+            <li>
+                Valorar tu vida mejora la calidad del RP.
+            </li>
+
+            <li>
+                No todo se resuelve disparando.
+            </li>
+
+        </ul>
+
+    </div>
+
 </div>
+```
 
-
+</div>
 
 <!-- =====================================================
 DMVDM
@@ -2895,139 +2329,105 @@ DMVDM
 
 <div class="subContent" id="dmvdm">
 
-    <div class="subContentCard">
+```
+<div class="subContentCard">
 
-        <div class="subHeader">
+    <div class="subHeader">
 
-            <div>
+        <div>
 
-                <span class="subMini">
-                    CON 4
-                </span>
+            <span class="subMini">
+                CON 4
+            </span>
 
-                <h2>
-                    DM / VDM
-                </h2>
-
-            </div>
-
-        </div>
-
-        <div class="subDivider"></div>
-
-        <p>
-
-            DM (DeathMatch) y VDM (Vehicle DeathMatch)
-            consisten en matar, atropellar o agredir jugadores
-            sin rol previo, sin contexto o sin motivo válido RP.
-
-        </p>
-
-
-        <div class="compareGrid">
-
-            <!-- ========================================= -->
-            <!-- CORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="goodBox">
-
-                <h3>
-                    ✅ Correcto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Tener contexto RP antes de disparar.
-                    </li>
-
-                    <li>
-                        Dar advertencias o amenazas coherentes.
-                    </li>
-
-                    <li>
-                        Mantener lógica durante enfrentamientos.
-                    </li>
-
-                    <li>
-                        Utilizar violencia únicamente cuando el rol lo requiera.
-                    </li>
-
-                    <li>
-                        Respetar el tiempo de reacción de otros jugadores.
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- ========================================= -->
-            <!-- INCORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="badBox">
-
-                <h3>
-                    ❌ Incorrecto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Disparar sin motivo.
-                    </li>
-
-                    <li>
-                        Atropellar jugadores por diversión.
-                    </li>
-
-                    <li>
-                        Iniciar tiroteos sin contexto.
-                    </li>
-
-                    <li>
-                        Usar vehículos como armas.
-                    </li>
-
-                    <li>
-                        Buscar matar únicamente para ganar.
-                    </li>
-
-                </ul>
-
-            </div>
+            <h2>
+                DM / VDM
+            </h2>
 
         </div>
 
+    </div>
+
+    <div class="subDivider"></div>
+
+    <p>
+
+        DM (DeathMatch) y VDM (Vehicle DeathMatch)
+        consisten en matar, atropellar o agredir jugadores
+        sin rol previo, sin contexto o sin motivo válido RP.
+
+    </p>
+
+
+    <div class="compareGrid">
 
         <!-- ========================================= -->
-        <!-- CONSEJOS -->
+        <!-- CORRECTO -->
         <!-- ========================================= -->
 
-        <div class="tipBox">
+        <div class="goodBox">
 
             <h3>
-                💡 Consejos
+                ✅ Correcto
             </h3>
 
             <ul>
 
                 <li>
-                    Toda agresión debe tener contexto RP.
+                    Tener contexto RP antes de disparar.
                 </li>
 
                 <li>
-                    No todo conflicto termina en disparos.
+                    Dar advertencias o amenazas coherentes.
                 </li>
 
                 <li>
-                    El rol siempre está por encima del PvP.
+                    Mantener lógica durante enfrentamientos.
                 </li>
 
                 <li>
-                    Mantén escenas coherentes y cinematográficas.
+                    Utilizar violencia únicamente cuando el rol lo requiera.
+                </li>
+
+                <li>
+                    Respetar el tiempo de reacción de otros jugadores.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- INCORRECTO -->
+        <!-- ========================================= -->
+
+        <div class="badBox">
+
+            <h3>
+                ❌ Incorrecto
+            </h3>
+
+            <ul>
+
+                <li>
+                    Disparar sin motivo.
+                </li>
+
+                <li>
+                    Atropellar jugadores por diversión.
+                </li>
+
+                <li>
+                    Iniciar tiroteos sin contexto.
+                </li>
+
+                <li>
+                    Usar vehículos como armas.
+                </li>
+
+                <li>
+                    Buscar matar únicamente para ganar.
                 </li>
 
             </ul>
@@ -3036,9 +2436,43 @@ DMVDM
 
     </div>
 
+
+    <!-- ========================================= -->
+    <!-- CONSEJOS -->
+    <!-- ========================================= -->
+
+    <div class="tipBox">
+
+        <h3>
+            💡 Consejos
+        </h3>
+
+        <ul>
+
+            <li>
+                Toda agresión debe tener contexto RP.
+            </li>
+
+            <li>
+                No todo conflicto termina en disparos.
+            </li>
+
+            <li>
+                El rol siempre está por encima del PvP.
+            </li>
+
+            <li>
+                Mantén escenas coherentes y cinematográficas.
+            </li>
+
+        </ul>
+
+    </div>
+
 </div>
+```
 
-
+</div>
 
 <!-- =====================================================
 RK
@@ -3046,139 +2480,105 @@ RK
 
 <div class="subContent" id="rk">
 
-    <div class="subContentCard">
+```
+<div class="subContentCard">
 
-        <div class="subHeader">
+    <div class="subHeader">
 
-            <div>
+        <div>
 
-                <span class="subMini">
-                    CON 5
-                </span>
+            <span class="subMini">
+                CON 5
+            </span>
 
-                <h2>
-                    RK (Revenge Kill)
-                </h2>
-
-            </div>
-
-        </div>
-
-        <div class="subDivider"></div>
-
-        <p>
-
-            RK (Revenge Kill) consiste en volver a una escena
-            después de morir con el objetivo de buscar venganza,
-            recuperar objetos o continuar el enfrentamiento anterior.
-
-        </p>
-
-
-        <div class="compareGrid">
-
-            <!-- ========================================= -->
-            <!-- CORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="goodBox">
-
-                <h3>
-                    ✅ Correcto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Olvidar la escena tras morir.
-                    </li>
-
-                    <li>
-                        Continuar otro rol distinto.
-                    </li>
-
-                    <li>
-                        Respetar las consecuencias RP.
-                    </li>
-
-                    <li>
-                        Mantener coherencia tras la muerte.
-                    </li>
-
-                    <li>
-                        Esperar antes de regresar a la zona.
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- ========================================= -->
-            <!-- INCORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="badBox">
-
-                <h3>
-                    ❌ Incorrecto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Volver armado inmediatamente.
-                    </li>
-
-                    <li>
-                        Buscar a quien te mató.
-                    </li>
-
-                    <li>
-                        Continuar el tiroteo anterior.
-                    </li>
-
-                    <li>
-                        Recuperar armas o vehículos de la escena.
-                    </li>
-
-                    <li>
-                        Recordar detalles tras morir.
-                    </li>
-
-                </ul>
-
-            </div>
+            <h2>
+                RK (Revenge Kill)
+            </h2>
 
         </div>
 
+    </div>
+
+    <div class="subDivider"></div>
+
+    <p>
+
+        RK (Revenge Kill) consiste en volver a una escena
+        después de morir con el objetivo de buscar venganza,
+        recuperar objetos o continuar el enfrentamiento anterior.
+
+    </p>
+
+
+    <div class="compareGrid">
 
         <!-- ========================================= -->
-        <!-- CONSEJOS -->
+        <!-- CORRECTO -->
         <!-- ========================================= -->
 
-        <div class="tipBox">
+        <div class="goodBox">
 
             <h3>
-                💡 Consejos
+                ✅ Correcto
             </h3>
 
             <ul>
 
                 <li>
-                    La muerte tiene consecuencias dentro del RP.
+                    Olvidar la escena tras morir.
                 </li>
 
                 <li>
-                    Tu personaje no recuerda completamente la escena.
+                    Continuar otro rol distinto.
                 </li>
 
                 <li>
-                    Evita regresar inmediatamente al lugar del conflicto.
+                    Respetar las consecuencias RP.
                 </li>
 
                 <li>
-                    Prioriza crear historias antes que buscar venganza.
+                    Mantener coherencia tras la muerte.
+                </li>
+
+                <li>
+                    Esperar antes de regresar a la zona.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- INCORRECTO -->
+        <!-- ========================================= -->
+
+        <div class="badBox">
+
+            <h3>
+                ❌ Incorrecto
+            </h3>
+
+            <ul>
+
+                <li>
+                    Volver armado inmediatamente.
+                </li>
+
+                <li>
+                    Buscar a quien te mató.
+                </li>
+
+                <li>
+                    Continuar el tiroteo anterior.
+                </li>
+
+                <li>
+                    Recuperar armas o vehículos de la escena.
+                </li>
+
+                <li>
+                    Recordar detalles tras morir.
                 </li>
 
             </ul>
@@ -3187,8 +2587,43 @@ RK
 
     </div>
 
-</div>
 
+    <!-- ========================================= -->
+    <!-- CONSEJOS -->
+    <!-- ========================================= -->
+
+    <div class="tipBox">
+
+        <h3>
+            💡 Consejos
+        </h3>
+
+        <ul>
+
+            <li>
+                La muerte tiene consecuencias dentro del RP.
+            </li>
+
+            <li>
+                Tu personaje no recuerda completamente la escena.
+            </li>
+
+            <li>
+                Evita regresar inmediatamente al lugar del conflicto.
+            </li>
+
+            <li>
+                Prioriza crear historias antes que buscar venganza.
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+```
+
+</div>
 
 <!-- =====================================================
 PK
@@ -3196,139 +2631,105 @@ PK
 
 <div class="subContent" id="pk">
 
-    <div class="subContentCard">
+```
+<div class="subContentCard">
 
-        <div class="subHeader">
+    <div class="subHeader">
 
-            <div>
+        <div>
 
-                <span class="subMini">
-                    CON 6
-                </span>
+            <span class="subMini">
+                CON 6
+            </span>
 
-                <h2>
-                    PK (Player Kill)
-                </h2>
-
-            </div>
-
-        </div>
-
-        <div class="subDivider"></div>
-
-        <p>
-
-            PK (Player Kill) significa que tu personaje
-            pierde parcialmente la memoria de los eventos
-            ocurridos antes de morir.
-
-        </p>
-
-
-        <div class="compareGrid">
-
-            <!-- ========================================= -->
-            <!-- CORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="goodBox">
-
-                <h3>
-                    ✅ Correcto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Olvidar quién te disparó.
-                    </li>
-
-                    <li>
-                        No regresar inmediatamente.
-                    </li>
-
-                    <li>
-                        Continuar otro rol distinto.
-                    </li>
-
-                    <li>
-                        Mantener coherencia RP.
-                    </li>
-
-                    <li>
-                        Actuar como alguien desorientado.
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- ========================================= -->
-            <!-- INCORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="badBox">
-
-                <h3>
-                    ❌ Incorrecto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Buscar venganza.
-                    </li>
-
-                    <li>
-                        Recordar toda la escena.
-                    </li>
-
-                    <li>
-                        Volver armado.
-                    </li>
-
-                    <li>
-                        Continuar el conflicto anterior.
-                    </li>
-
-                    <li>
-                        Actuar como si no hubieras muerto.
-                    </li>
-
-                </ul>
-
-            </div>
+            <h2>
+                PK (Player Kill)
+            </h2>
 
         </div>
 
+    </div>
+
+    <div class="subDivider"></div>
+
+    <p>
+
+        PK (Player Kill) significa que tu personaje
+        pierde parcialmente la memoria de los eventos
+        ocurridos antes de morir.
+
+    </p>
+
+
+    <div class="compareGrid">
 
         <!-- ========================================= -->
-        <!-- CONSEJOS -->
+        <!-- CORRECTO -->
         <!-- ========================================= -->
 
-        <div class="tipBox">
+        <div class="goodBox">
 
             <h3>
-                💡 Consejos
+                ✅ Correcto
             </h3>
 
             <ul>
 
                 <li>
-                    El PK genera pérdida parcial de memoria.
+                    Olvidar quién te disparó.
                 </li>
 
                 <li>
-                    La muerte debe tener impacto en tu personaje.
+                    No regresar inmediatamente.
                 </li>
 
                 <li>
-                    Evita regresar rápidamente a la escena.
+                    Continuar otro rol distinto.
                 </li>
 
                 <li>
-                    Mantén siempre coherencia narrativa.
+                    Mantener coherencia RP.
+                </li>
+
+                <li>
+                    Actuar como alguien desorientado.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- INCORRECTO -->
+        <!-- ========================================= -->
+
+        <div class="badBox">
+
+            <h3>
+                ❌ Incorrecto
+            </h3>
+
+            <ul>
+
+                <li>
+                    Buscar venganza.
+                </li>
+
+                <li>
+                    Recordar toda la escena.
+                </li>
+
+                <li>
+                    Volver armado.
+                </li>
+
+                <li>
+                    Continuar el conflicto anterior.
+                </li>
+
+                <li>
+                    Actuar como si no hubieras muerto.
                 </li>
 
             </ul>
@@ -3337,9 +2738,43 @@ PK
 
     </div>
 
+
+    <!-- ========================================= -->
+    <!-- CONSEJOS -->
+    <!-- ========================================= -->
+
+    <div class="tipBox">
+
+        <h3>
+            💡 Consejos
+        </h3>
+
+        <ul>
+
+            <li>
+                El PK genera pérdida parcial de memoria.
+            </li>
+
+            <li>
+                La muerte debe tener impacto en tu personaje.
+            </li>
+
+            <li>
+                Evita regresar rápidamente a la escena.
+            </li>
+
+            <li>
+                Mantén siempre coherencia narrativa.
+            </li>
+
+        </ul>
+
+    </div>
+
 </div>
+```
 
-
+</div>
 
 <!-- =====================================================
 CK
@@ -3347,139 +2782,105 @@ CK
 
 <div class="subContent" id="ck">
 
-    <div class="subContentCard">
+```
+<div class="subContentCard">
 
-        <div class="subHeader">
+    <div class="subHeader">
 
-            <div>
+        <div>
 
-                <span class="subMini">
-                    CON 7
-                </span>
+            <span class="subMini">
+                CON 7
+            </span>
 
-                <h2>
-                    CK (Character Kill)
-                </h2>
-
-            </div>
-
-        </div>
-
-        <div class="subDivider"></div>
-
-        <p>
-
-            CK (Character Kill) representa la muerte
-            definitiva de un personaje dentro del servidor.
-            Esto implica finalizar completamente su historia RP.
-
-        </p>
-
-
-        <div class="compareGrid">
-
-            <!-- ========================================= -->
-            <!-- CORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="goodBox">
-
-                <h3>
-                    ✅ Correcto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Finalizar la historia del personaje.
-                    </li>
-
-                    <li>
-                        Crear un nuevo personaje tras el CK.
-                    </li>
-
-                    <li>
-                        Respetar las consecuencias RP.
-                    </li>
-
-                    <li>
-                        Mantener coherencia narrativa.
-                    </li>
-
-                    <li>
-                        Realizar CK únicamente con aprobación correspondiente.
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- ========================================= -->
-            <!-- INCORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="badBox">
-
-                <h3>
-                    ❌ Incorrecto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Volver con el mismo personaje.
-                    </li>
-
-                    <li>
-                        Continuar la misma historia.
-                    </li>
-
-                    <li>
-                        Ignorar el CK realizado.
-                    </li>
-
-                    <li>
-                        Recuperar memorias del personaje eliminado.
-                    </li>
-
-                    <li>
-                        Hacer CK sin contexto RP.
-                    </li>
-
-                </ul>
-
-            </div>
+            <h2>
+                CK (Character Kill)
+            </h2>
 
         </div>
 
+    </div>
+
+    <div class="subDivider"></div>
+
+    <p>
+
+        CK (Character Kill) representa la muerte
+        definitiva de un personaje dentro del servidor.
+        Esto implica finalizar completamente su historia RP.
+
+    </p>
+
+
+    <div class="compareGrid">
 
         <!-- ========================================= -->
-        <!-- CONSEJOS -->
+        <!-- CORRECTO -->
         <!-- ========================================= -->
 
-        <div class="tipBox">
+        <div class="goodBox">
 
             <h3>
-                💡 Consejos
+                ✅ Correcto
             </h3>
 
             <ul>
 
                 <li>
-                    El CK debe tener peso narrativo.
+                    Finalizar la historia del personaje.
                 </li>
 
                 <li>
-                    Toda muerte definitiva debe ser coherente.
+                    Crear un nuevo personaje tras el CK.
                 </li>
 
                 <li>
-                    Un nuevo personaje requiere nueva historia.
+                    Respetar las consecuencias RP.
                 </li>
 
                 <li>
-                    El objetivo es mejorar el desarrollo RP.
+                    Mantener coherencia narrativa.
+                </li>
+
+                <li>
+                    Realizar CK únicamente con aprobación correspondiente.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- INCORRECTO -->
+        <!-- ========================================= -->
+
+        <div class="badBox">
+
+            <h3>
+                ❌ Incorrecto
+            </h3>
+
+            <ul>
+
+                <li>
+                    Volver con el mismo personaje.
+                </li>
+
+                <li>
+                    Continuar la misma historia.
+                </li>
+
+                <li>
+                    Ignorar el CK realizado.
+                </li>
+
+                <li>
+                    Recuperar memorias del personaje eliminado.
+                </li>
+
+                <li>
+                    Hacer CK sin contexto RP.
                 </li>
 
             </ul>
@@ -3488,9 +2889,43 @@ CK
 
     </div>
 
+
+    <!-- ========================================= -->
+    <!-- CONSEJOS -->
+    <!-- ========================================= -->
+
+    <div class="tipBox">
+
+        <h3>
+            💡 Consejos
+        </h3>
+
+        <ul>
+
+            <li>
+                El CK debe tener peso narrativo.
+            </li>
+
+            <li>
+                Toda muerte definitiva debe ser coherente.
+            </li>
+
+            <li>
+                Un nuevo personaje requiere nueva historia.
+            </li>
+
+            <li>
+                El objetivo es mejorar el desarrollo RP.
+            </li>
+
+        </ul>
+
+    </div>
+
 </div>
+```
 
-
+</div>
 
 <!-- =====================================================
 FAIRPLAY
@@ -3498,139 +2933,105 @@ FAIRPLAY
 
 <div class="subContent" id="fairplay">
 
-    <div class="subContentCard">
+```
+<div class="subContentCard">
 
-        <div class="subHeader">
+    <div class="subHeader">
 
-            <div>
+        <div>
 
-                <span class="subMini">
-                    CON 8
-                </span>
+            <span class="subMini">
+                CON 8
+            </span>
 
-                <h2>
-                    Fair Play
-                </h2>
-
-            </div>
-
-        </div>
-
-        <div class="subDivider"></div>
-
-        <p>
-
-            Fair Play significa jugar de manera honesta,
-            respetuosa y priorizando el buen desarrollo
-            del Roleplay por encima de ganar.
-
-        </p>
-
-
-        <div class="compareGrid">
-
-            <!-- ========================================= -->
-            <!-- CORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="goodBox">
-
-                <h3>
-                    ✅ Correcto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Aceptar derrotas RP.
-                    </li>
-
-                    <li>
-                        Respetar el rol de otros jugadores.
-                    </li>
-
-                    <li>
-                        Mantener escenas fluidas.
-                    </li>
-
-                    <li>
-                        Dar oportunidades de reacción.
-                    </li>
-
-                    <li>
-                        Priorizar historias antes que ganar.
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- ========================================= -->
-            <!-- INCORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="badBox">
-
-                <h3>
-                    ❌ Incorrecto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Buscar ganar siempre.
-                    </li>
-
-                    <li>
-                        Romper rol para obtener ventaja.
-                    </li>
-
-                    <li>
-                        Abusar de mecánicas o bugs.
-                    </li>
-
-                    <li>
-                        Tóxicidad constante OOC.
-                    </li>
-
-                    <li>
-                        Cortar escenas por frustración.
-                    </li>
-
-                </ul>
-
-            </div>
+            <h2>
+                Fair Play
+            </h2>
 
         </div>
 
+    </div>
+
+    <div class="subDivider"></div>
+
+    <p>
+
+        Fair Play significa jugar de manera honesta,
+        respetuosa y priorizando el buen desarrollo
+        del Roleplay por encima de ganar.
+
+    </p>
+
+
+    <div class="compareGrid">
 
         <!-- ========================================= -->
-        <!-- CONSEJOS -->
+        <!-- CORRECTO -->
         <!-- ========================================= -->
 
-        <div class="tipBox">
+        <div class="goodBox">
 
             <h3>
-                💡 Consejos
+                ✅ Correcto
             </h3>
 
             <ul>
 
                 <li>
-                    El mejor RP crea historias, no victorias.
+                    Aceptar derrotas RP.
                 </li>
 
                 <li>
-                    Respeta siempre la experiencia de otros jugadores.
+                    Respetar el rol de otros jugadores.
                 </li>
 
                 <li>
-                    Mantén coherencia incluso en derrotas.
+                    Mantener escenas fluidas.
                 </li>
 
                 <li>
-                    El respeto OOC es obligatorio.
+                    Dar oportunidades de reacción.
+                </li>
+
+                <li>
+                    Priorizar historias antes que ganar.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- INCORRECTO -->
+        <!-- ========================================= -->
+
+        <div class="badBox">
+
+            <h3>
+                ❌ Incorrecto
+            </h3>
+
+            <ul>
+
+                <li>
+                    Buscar ganar siempre.
+                </li>
+
+                <li>
+                    Romper rol para obtener ventaja.
+                </li>
+
+                <li>
+                    Abusar de mecánicas o bugs.
+                </li>
+
+                <li>
+                    Tóxicidad constante OOC.
+                </li>
+
+                <li>
+                    Cortar escenas por frustración.
                 </li>
 
             </ul>
@@ -3639,9 +3040,43 @@ FAIRPLAY
 
     </div>
 
+
+    <!-- ========================================= -->
+    <!-- CONSEJOS -->
+    <!-- ========================================= -->
+
+    <div class="tipBox">
+
+        <h3>
+            💡 Consejos
+        </h3>
+
+        <ul>
+
+            <li>
+                El mejor RP crea historias, no victorias.
+            </li>
+
+            <li>
+                Respeta siempre la experiencia de otros jugadores.
+            </li>
+
+            <li>
+                Mantén coherencia incluso en derrotas.
+            </li>
+
+            <li>
+                El respeto OOC es obligatorio.
+            </li>
+
+        </ul>
+
+    </div>
+
 </div>
+```
 
-
+</div>
 
 <!-- =====================================================
 DO
@@ -3649,139 +3084,105 @@ DO
 
 <div class="subContent" id="do">
 
-    <div class="subContentCard">
+```
+<div class="subContentCard">
 
-        <div class="subHeader">
+    <div class="subHeader">
 
-            <div>
+        <div>
 
-                <span class="subMini">
-                    CON 9
-                </span>
+            <span class="subMini">
+                CON 9
+            </span>
 
-                <h2>
-                    /Do
-                </h2>
-
-            </div>
-
-        </div>
-
-        <div class="subDivider"></div>
-
-        <p>
-
-            El comando <strong>/Do</strong> se utiliza para describir
-            el entorno, situaciones visibles o información que
-            los personajes podrían notar dentro de una escena RP.
-
-        </p>
-
-
-        <div class="compareGrid">
-
-            <!-- ========================================= -->
-            <!-- CORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="goodBox">
-
-                <h3>
-                    ✅ Ejemplos Correctos
-                </h3>
-
-                <ul>
-
-                    <li>
-                        /Do Se observa sangre en el suelo.
-                    </li>
-
-                    <li>
-                        /Do El vehículo quedó completamente destruido.
-                    </li>
-
-                    <li>
-                        /Do El sujeto parece nervioso y herido.
-                    </li>
-
-                    <li>
-                        /Do La puerta se encuentra cerrada con llave.
-                    </li>
-
-                    <li>
-                        /Do Se escucha una sirena acercándose.
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <!-- ========================================= -->
-            <!-- INCORRECTO -->
-            <!-- ========================================= -->
-
-            <div class="badBox">
-
-                <h3>
-                    ❌ Incorrecto
-                </h3>
-
-                <ul>
-
-                    <li>
-                        Usar /Do para forzar rol.
-                    </li>
-
-                    <li>
-                        Mentir sobre el entorno.
-                    </li>
-
-                    <li>
-                        Manipular acciones ajenas.
-                    </li>
-
-                    <li>
-                        Describir información imposible.
-                    </li>
-
-                    <li>
-                        Troll usando /Do.
-                    </li>
-
-                </ul>
-
-            </div>
+            <h2>
+                /Do
+            </h2>
 
         </div>
 
+    </div>
+
+    <div class="subDivider"></div>
+
+    <p>
+
+        El comando <strong>/Do</strong> se utiliza para describir
+        el entorno, situaciones visibles o información que
+        los personajes podrían notar dentro de una escena RP.
+
+    </p>
+
+
+    <div class="compareGrid">
 
         <!-- ========================================= -->
-        <!-- CONSEJOS -->
+        <!-- CORRECTO -->
         <!-- ========================================= -->
 
-        <div class="tipBox">
+        <div class="goodBox">
 
             <h3>
-                💡 Consejos
+                ✅ Ejemplos Correctos
             </h3>
 
             <ul>
 
                 <li>
-                    /Do describe el entorno, no controla jugadores.
+                    /Do Se observa sangre en el suelo.
                 </li>
 
                 <li>
-                    Mantén siempre coherencia RP.
+                    /Do El vehículo quedó completamente destruido.
                 </li>
 
                 <li>
-                    Utiliza /Do para mejorar inmersión.
+                    /Do El sujeto parece nervioso y herido.
                 </li>
 
                 <li>
-                    Evita usar información imposible o irreal.
+                    /Do La puerta se encuentra cerrada con llave.
+                </li>
+
+                <li>
+                    /Do Se escucha una sirena acercándose.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- INCORRECTO -->
+        <!-- ========================================= -->
+
+        <div class="badBox">
+
+            <h3>
+                ❌ Incorrecto
+            </h3>
+
+            <ul>
+
+                <li>
+                    Usar /Do para forzar rol.
+                </li>
+
+                <li>
+                    Mentir sobre el entorno.
+                </li>
+
+                <li>
+                    Manipular acciones ajenas.
+                </li>
+
+                <li>
+                    Describir información imposible.
+                </li>
+
+                <li>
+                    Troll usando /Do.
                 </li>
 
             </ul>
@@ -3790,8 +3191,43 @@ DO
 
     </div>
 
-</div>
 
+    <!-- ========================================= -->
+    <!-- CONSEJOS -->
+    <!-- ========================================= -->
+
+    <div class="tipBox">
+
+        <h3>
+            💡 Consejos
+        </h3>
+
+        <ul>
+
+            <li>
+                /Do describe el entorno, no controla jugadores.
+            </li>
+
+            <li>
+                Mantén siempre coherencia RP.
+            </li>
+
+            <li>
+                Utiliza /Do para mejorar inmersión.
+            </li>
+
+            <li>
+                Evita usar información imposible o irreal.
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+```
+
+</div>
 
 <!-- =====================================================
 ME
@@ -3834,7 +3270,7 @@ Describe acciones físicas visibles.
 </div>
 
 <!-- =====================================================
-🔥 NORMATIVAS OFICIALES COMPLETAS — LA JUMPA RP
+🔥 NORMAS GENERALES COMPLETAS
 ===================================================== -->
 
 <div class="page" id="normasPage">
@@ -3846,20 +3282,18 @@ Describe acciones físicas visibles.
 </button>
 
 <h1 class="pageTitle">
-Normativas Oficiales
+Normas Generales
 </h1>
 
 <p class="pageSub">
-Reglas oficiales de LA JUMPA RP. El desconocimiento de las normas no exime sanción.
+Reglas oficiales de LA JUMPA RP.
+El desconocimiento de las normas no exime sanción.
 </p>
 
-
-
-<div class="conceptsGrid compactNormas">
-
+<div class="conceptsGrid">
 
 <!-- =====================================================
-NEGOCIOS
+COMBATE
 ===================================================== -->
 
 <div class="conceptCard">
@@ -3869,111 +3303,36 @@ NOR 1
 </span>
 
 <h2>
-🏢 Reglas de Negocios
+Combate RP
 </h2>
 
 <p>
-Todo negocio de LA JUMPA RP debe funcionar con orden, rol coherente, respeto al cliente y control administrativo.
-</p>
 
-<span class="normOpenHint">CLICK PARA ABRIR</span>
+Todo enfrentamiento debe tener contexto,
+rol previo y coherencia.
+
+</p>
 
 <div class="conceptDivider"></div>
 
 <div class="conceptSection">
 
 <h3>
-✅ Profesionalismo
+✅ Permitido
 </h3>
 
 <ul>
 
 <li>
-Tratar a los clientes con respeto y orden.
+Disparar tras una amenaza clara.
 </li>
 
 <li>
-Mantener comportamiento coherente con el rol del negocio.
+Mantener rol previo.
 </li>
 
 <li>
-No discutir, insultar ni provocar dentro del local.
-</li>
-
-</ul>
-
-</div>
-
-<div class="conceptSection">
-
-<h3>
-✅ Horarios y Servicio
-</h3>
-
-<ul>
-
-<li>
-Si el negocio está abierto, debe haber mínimo 1 empleado activo.
-</li>
-
-<li>
-Anunciar apertura y cierre en Discord, teléfono o medio IC si aplica.
-</li>
-
-<li>
-Si no hay empleados disponibles, el negocio debe considerarse cerrado.
-</li>
-
-</ul>
-
-</div>
-
-<div class="conceptSection">
-
-<h3>
-✅ Precios y Caja
-</h3>
-
-<ul>
-
-<li>
-Respetar la lista de precios aprobada por Staff o Dirección.
-</li>
-
-<li>
-Cada venta debe registrarse en la caja o sistema del negocio.
-</li>
-
-<li>
-El dueño debe revisar ingresos, reportes y movimientos del local.
-</li>
-
-</ul>
-
-</div>
-
-<div class="conceptSection">
-
-<h3>
-✅ Contratación y Funcionamiento
-</h3>
-
-<ul>
-
-<li>
-El dueño puede contratar o despedir empleados, siempre con rol.
-</li>
-
-<li>
-Mantener el negocio limpio, ordenado y seguro.
-</li>
-
-<li>
-Cooperar con PD cuando investiguen hechos ocurridos dentro del negocio.
-</li>
-
-<li>
-Llamar a la policía en asaltos, disturbios o emergencias.
+Dar tiempo de reacción.
 </li>
 
 </ul>
@@ -3989,71 +3348,15 @@ Llamar a la policía en asaltos, disturbios o emergencias.
 <ul>
 
 <li>
-Cobrar de más, estafar clientes o alterar precios sin autorización.
+Disparar sin razón.
 </li>
 
 <li>
-Regalar productos a amigos, bandas o conocidos sin permiso del dueño.
+Iniciar tiroteos por aburrimiento.
 </li>
 
 <li>
-Robar dinero del negocio o manipular la caja.
-</li>
-
-<li>
-Contratar personas buscadas por la policía sin razón IC lógica.
-</li>
-
-<li>
-Obligar empleados a realizar actividades ilegales.
-</li>
-
-<li>
-Usar el local para esconder criminales sin rol lógico.
-</li>
-
-<li>
-Permitir peleas, tiros o robos dentro del negocio sin intervención.
-</li>
-
-<li>
-Vender productos ilegales desde un negocio legal.
-</li>
-
-<li>
-Usar el negocio como tapadera criminal sin permiso de Staff.
-</li>
-
-<li>
-Mentir descaradamente a PD si existen cámaras o evidencia IC que lo contradiga.
-</li>
-
-<li>
-Hacer spam excesivo o atacar negocios rivales fuera del rol.
-</li>
-
-</ul>
-
-</div>
-
-<div class="tipBox">
-
-<h3>
-💡 Responsabilidad y Sanciones
-</h3>
-
-<ul>
-
-<li>
-El dueño debe mantener precios, normas y empleados bajo control.
-</li>
-
-<li>
-Si el negocio se usa con fines ilegales, el dueño puede asumir consecuencias.
-</li>
-
-<li>
-Las sanciones pueden incluir advertencia, multa económica, cierre temporal, cierre permanente o sanción administrativa.
+Matar sin contexto.
 </li>
 
 </ul>
@@ -4061,10 +3364,9 @@ Las sanciones pueden incluir advertencia, multa económica, cierre temporal, cie
 </div>
 
 </div>
-
 
 <!-- =====================================================
-EMBARAZO
+POLICIA
 ===================================================== -->
 
 <div class="conceptCard">
@@ -4074,127 +3376,36 @@ NOR 2
 </span>
 
 <h2>
-🤰 Reglas de Embarazo
+Policía
 </h2>
 
 <p>
-El rol de embarazo en LA JUMPA RP debe ser serio, consensuado, registrado y supervisado cuando sea necesario.
-</p>
 
-<span class="normOpenHint">CLICK PARA ABRIR</span>
+Las actuaciones policiales deben mantener
+profesionalismo y coherencia RP.
+
+</p>
 
 <div class="conceptDivider"></div>
 
 <div class="conceptSection">
 
 <h3>
-✅ Requisitos para Activar un Embarazo
+✅ Correcto
 </h3>
 
 <ul>
 
 <li>
-Debe ser acordado entre ambos jugadores con consentimiento claro.
+Usar protocolos RP.
 </li>
 
 <li>
-El embarazo debe tener sentido dentro del rol y no activarse por capricho.
+Negociar situaciones.
 </li>
 
 <li>
-Debe informarse a Staff para su registro correspondiente.
-</li>
-
-<li>
-Los embarazos deben quedar registrados en un canal interno.
-</li>
-
-</ul>
-
-</div>
-
-<div class="conceptSection">
-
-<h3>
-✅ Duración y Progreso
-</h3>
-
-<ul>
-
-<li>
-El embarazo dura entre 5 y 7 días reales en LA JUMPA RP.
-</li>
-
-<li>
-Cada día representa una etapa del embarazo.
-</li>
-
-<li>
-No se pueden saltar días sin autorización de Staff.
-</li>
-
-</ul>
-
-</div>
-
-<div class="conceptSection">
-
-<h3>
-✅ Cuidados Obligatorios
-</h3>
-
-<ul>
-
-<li>
-Debe asistir al hospital al menos 2 veces durante el embarazo.
-</li>
-
-<li>
-El personaje puede necesitar reposo o medicación según el médico del rol.
-</li>
-
-<li>
-Si ocurre un accidente o situación grave, se debe llamar a EMS.
-</li>
-
-<li>
-EMS tiene la última palabra en decisiones médicas dentro del rol.
-</li>
-
-</ul>
-
-</div>
-
-<div class="conceptSection">
-
-<h3>
-✅ Parto y Bebé
-</h3>
-
-<ul>
-
-<li>
-El parto debe realizarse con EMS o personal médico.
-</li>
-
-<li>
-No se permiten partos improvisados sin rol médico, salvo emergencia justificada.
-</li>
-
-<li>
-Staff puede supervisar el parto si el rol lo requiere.
-</li>
-
-<li>
-El bebé no aparece como personaje jugable inmediatamente.
-</li>
-
-<li>
-El bebé se rolea como recién nacido mediante NPC, objeto o diálogo.
-</li>
-
-<li>
-Después de un tiempo, se puede permitir un hijo mayor si Staff lo aprueba.
+Mantener respeto.
 </li>
 
 </ul>
@@ -4204,65 +3415,21 @@ Después de un tiempo, se puede permitir un hijo mayor si Staff lo aprueba.
 <div class="conceptSection bad">
 
 <h3>
-❌ Prohibido
+❌ Incorrecto
 </h3>
 
 <ul>
 
 <li>
-Activar embarazos de personajes menores de 18 años.
+Abusar de poder.
 </li>
 
 <li>
-Participar en tiroteos, peleas o actividades de alto riesgo durante el embarazo.
+Falta de rol policial.
 </li>
 
 <li>
-Conducir a alta velocidad o realizar acrobacias.
-</li>
-
-<li>
-Consumir drogas o alcohol dentro del rol durante el embarazo.
-</li>
-
-<li>
-Usar el embarazo como escudo para evitar sanciones, arrestos o roles.
-</li>
-
-<li>
-Fingir embarazo sin registro.
-</li>
-
-<li>
-Cambiar de padre en mitad del rol sin justificación y aprobación.
-</li>
-
-<li>
-Abandonar el embarazo sin justificarlo en rol o con Staff.
-</li>
-
-</ul>
-
-</div>
-
-<div class="tipBox">
-
-<h3>
-💡 Control y Sanciones
-</h3>
-
-<ul>
-
-<li>
-Puede existir riesgo de pérdida del embarazo si el rol médico lo justifica.
-</li>
-
-<li>
-Cualquier problema debe hablarse con Dirección o Staff Médico.
-</li>
-
-<li>
-Incumplir estas reglas puede causar cancelación del embarazo o sanción administrativa.
+Usar fuerza sin motivo.
 </li>
 
 </ul>
@@ -4270,10 +3437,9 @@ Incumplir estas reglas puede causar cancelación del embarazo o sanción adminis
 </div>
 
 </div>
-
 
 <!-- =====================================================
-TALLER MECANICO
+ECONOMIA
 ===================================================== -->
 
 <div class="conceptCard">
@@ -4283,107 +3449,32 @@ NOR 3
 </span>
 
 <h2>
-🔧 Reglas del Taller Mecánico
+Economía
 </h2>
 
 <p>
-El taller mecánico de LA JUMPA RP debe trabajar con rol, precios claros, respeto al cliente y uso responsable de herramientas.
-</p>
 
-<span class="normOpenHint">CLICK PARA ABRIR</span>
+La economía debe mantenerse estable
+y realista.
+
+</p>
 
 <div class="conceptDivider"></div>
 
 <div class="conceptSection">
 
 <h3>
-✅ Profesionalismo y Servicio
+✅ Permitido
 </h3>
 
 <ul>
 
 <li>
-Tratar a los clientes con respeto.
+Negocios legales RP.
 </li>
 
 <li>
-No insultar, provocar ni discutir innecesariamente.
-</li>
-
-<li>
-Hablar y comportarse como un mecánico real dentro del rol.
-</li>
-
-<li>
-Cuando estés de servicio, debes mantenerte en el taller o en misiones relacionadas.
-</li>
-
-<li>
-Avisar cuando entres y salgas de servicio.
-</li>
-
-</ul>
-
-</div>
-
-<div class="conceptSection">
-
-<h3>
-✅ Precios, Reparaciones y Tuning
-</h3>
-
-<ul>
-
-<li>
-Respetar la lista de precios del taller: reparaciones, pintura, tuning y remolques.
-</li>
-
-<li>
-Todos los trabajos deben hacerse con rol, no de forma instantánea.
-</li>
-
-<li>
-Toda reparación requiere rol mínimo: inspección, herramientas y explicación.
-</li>
-
-<li>
-El tuning debe respetar la lógica del servidor.
-</li>
-
-<li>
-Mantener el taller limpio y organizado.
-</li>
-
-<li>
-Respetar rangos: Aprendiz → Mecánico → Jefe de Taller → Dueño.
-</li>
-
-</ul>
-
-</div>
-
-<div class="conceptSection">
-
-<h3>
-✅ Uso de Grúa / Remolque
-</h3>
-
-<ul>
-
-<li>
-Usar la grúa únicamente para vehículos dañados.
-</li>
-
-<li>
-Remolcar autos mal estacionados solo con autorización.
-</li>
-
-<li>
-Prestar asistencia a clientes cuando el rol lo requiera.
-</li>
-
-<li>
-Colaborar con EMS y PD en accidentes, bloqueos y remolques.
+Comercio coherente.
 </li>
 
 </ul>
@@ -4399,83 +3490,15 @@ Colaborar con EMS y PD en accidentes, bloqueos y remolques.
 <ul>
 
 <li>
-Participar en tiroteos, robos o actividades ilegales mientras llevas uniforme.
+Duplicar dinero.
 </li>
 
 <li>
-Usar vehículos del taller para fines personales o ilegales.
+Abusar de bugs económicos.
 </li>
 
 <li>
-Cobrar sobreprecio o regalar servicios sin permiso del encargado o dueño.
-</li>
-
-<li>
-Remolcar autos por diversión, causar caos o robar autos usando la grúa.
-</li>
-
-<li>
-Colocar mejoras prohibidas, extremas o fuera de lógica.
-</li>
-
-<li>
-Tunear autos gratis a amigos o bandas; esto se considera corrupción.
-</li>
-
-<li>
-Reparar en medio de un tiroteo o persecución sin rol.
-</li>
-
-<li>
-Usar el menú de mecánico para beneficiar criminales en escapes.
-</li>
-
-<li>
-Interferir en escenas policiales sin ser llamado.
-</li>
-
-<li>
-Ayudar a esconder autos buscados.
-</li>
-
-<li>
-Vender autos ilegales o duplicados.
-</li>
-
-<li>
-Usar el taller como guarida criminal.
-</li>
-
-<li>
-Usar herramientas para romper rol, por ejemplo bajar coches en persecución.
-</li>
-
-</ul>
-
-</div>
-
-<div class="tipBox">
-
-<h3>
-💡 Sanciones
-</h3>
-
-<ul>
-
-<li>
-Advertencia.
-</li>
-
-<li>
-Suspensión del trabajo mecánico.
-</li>
-
-<li>
-Expulsión del taller.
-</li>
-
-<li>
-Sanción administrativa si afecta al servidor.
+Transferencias irreales.
 </li>
 
 </ul>
@@ -4483,10 +3506,9 @@ Sanción administrativa si afecta al servidor.
 </div>
 
 </div>
-
 
 <!-- =====================================================
-ROL DELICTIVO
+TOXICIDAD
 ===================================================== -->
 
 <div class="conceptCard">
@@ -4496,139 +3518,243 @@ NOR 4
 </span>
 
 <h2>
-🕶️ Reglas del Rol Delictivo
+Toxicidad
 </h2>
 
 <p>
-Todo acto criminal en LA JUMPA RP debe tener contexto, rol previo, lógica y respeto por la experiencia de los demás jugadores.
-</p>
 
-<span class="normOpenHint">CLICK PARA ABRIR</span>
+Se debe mantener respeto
+hacia todos los jugadores.
+
+</p>
 
 <div class="conceptDivider"></div>
 
 <div class="conceptSection">
 
 <h3>
-✅ Profesionalismo Criminal
+✅ Correcto
 </h3>
 
 <ul>
 
 <li>
-Todo acto criminal debe tener rol: robo, secuestro, ajuste, amenaza o conflicto.
+Mantener respeto OOC.
 </li>
 
 <li>
-Mantener una historia coherente con la banda o personaje.
-</li>
-
-<li>
-Las armas deben usarse solo cuando el rol lo justifique.
-</li>
-
-<li>
-Guardar armas en zonas seguras y no cargarlas siempre sin sentido.
+Resolver conflictos con staff.
 </li>
 
 </ul>
 
 </div>
 
-<div class="conceptSection">
+<div class="conceptSection bad">
 
 <h3>
-✅ Secuestros
+❌ Incorrecto
 </h3>
 
 <ul>
 
 <li>
-Máximo 1 secuestro cada 30 a 40 minutos por banda.
+Insultos OOC.
 </li>
 
 <li>
-Debe existir motivo válido: deudas, traición, guerra o información.
+Acoso constante.
 </li>
 
 <li>
-El secuestrado debe tener posibilidad de rol; no se debe matar de inmediato.
+Toxicidad en chats.
 </li>
 
 </ul>
 
 </div>
 
+</div>
+
+<!-- =====================================================
+STREAMERS
+===================================================== -->
+
+<div class="conceptCard">
+
+<span class="conceptNumber">
+NOR 5
+</span>
+
+<h2>
+Streamers
+</h2>
+
+<p>
+
+Los streamers deben mantener
+la inmersión RP.
+
+</p>
+
+<div class="conceptDivider"></div>
+
 <div class="conceptSection">
 
 <h3>
-✅ Robos
+✅ Correcto
 </h3>
 
 <ul>
 
 <li>
-Los robos a civiles solo se permiten si existe motivo: dinero, información o ajuste.
+Ocultar información sensible.
 </li>
 
 <li>
-No abusar ni hacer robos en cadena.
-</li>
-
-<li>
-Los robos a negocios deben hacerse con rol y organización.
-</li>
-
-<li>
-No se debe forzar el roleplay del dueño del negocio.
-</li>
-
-<li>
-Los robos mayores como banco o joyería deben cumplir el mínimo de miembros establecido por el servidor.
-</li>
-
-<li>
-Los robos mayores requieren negociación con la policía.
+Mantener rol serio.
 </li>
 
 </ul>
 
 </div>
 
-<div class="conceptSection">
+<div class="conceptSection bad">
 
 <h3>
-✅ Trato con PD, Vehículos y Guerras
+❌ Incorrecto
 </h3>
 
 <ul>
 
 <li>
-Se puede negociar, huir o rendirse según la situación.
+Usar chat para ventaja.
 </li>
 
 <li>
-Si estás rodeado sin escape, debes rolear captura y no desconectar.
+Revelar ubicaciones.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- =====================================================
+ORGANIZACIONES
+===================================================== -->
+
+<div class="conceptCard">
+
+<span class="conceptNumber">
+NOR 6
+</span>
+
+<h2>
+Organizaciones
+</h2>
+
+<p>
+
+Las organizaciones deben mantener
+actividad RP coherente.
+
+</p>
+
+<div class="conceptDivider"></div>
+
+<div class="conceptSection">
+
+<h3>
+✅ Correcto
+</h3>
+
+<ul>
+
+<li>
+Mantener jerarquía.
 </li>
 
 <li>
-Las guerras entre bandas deben ser aprobadas por Staff o Dirección.
+Roles organizados.
 </li>
 
 <li>
-No atacar fuera del territorio enemigo sin motivo.
+Respeto interno.
+</li>
+
+</ul>
+
+</div>
+
+<div class="conceptSection bad">
+
+<h3>
+❌ Incorrecto
+</h3>
+
+<ul>
+
+<li>
+Abuso masivo.
 </li>
 
 <li>
-Respetar cooldowns entre enfrentamientos.
+Antirol organizado.
 </li>
 
 <li>
-El cultivo, distribución y venta de droga deben tener rol mínimo.
+Toxicidad grupal.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- =====================================================
+ROBOS
+===================================================== -->
+
+<div class="conceptCard">
+
+<span class="conceptNumber">
+NOR 7
+</span>
+
+<h2>
+Robos
+</h2>
+
+<p>
+
+Todo robo debe mantener lógica
+y rol previo.
+
+</p>
+
+<div class="conceptDivider"></div>
+
+<div class="conceptSection">
+
+<h3>
+✅ Permitido
+</h3>
+
+<ul>
+
+<li>
+Amenaza verbal RP.
 </li>
 
 <li>
-Si PD llega a una escena de droga, se debe rolear: escapar, esconderse o negociar.
+Contexto previo.
+</li>
+
+<li>
+Tiempo de reacción.
 </li>
 
 </ul>
@@ -4644,95 +3770,190 @@ Si PD llega a una escena de droga, se debe rolear: escapar, esconderse o negocia
 <ul>
 
 <li>
-Hacer DM, RDM o matar sin razón.
+Robar recién conectados.
 </li>
 
 <li>
-Disparar por diversión, al azar o sin propósito.
+Robos sin rol.
 </li>
 
 <li>
-Atropellar por diversión o usar vehículos como armas sin rol.
-</li>
-
-<li>
-Secuestrar en zona segura: hospital, PD, mecánico, banco, ayuntamiento u oficinas públicas.
-</li>
-
-<li>
-Realizar robos, disparos, secuestros o amenazas en zonas seguras.
-</li>
-
-<li>
-Iniciar tiroteos contra la policía sin motivo.
-</li>
-
-<li>
-Insultar a la policía fuera del rol.
-</li>
-
-<li>
-Usar vehículos irreales para actos criminales: super autos o coches exagerados.
-</li>
-
-<li>
-Abusar de motos para escapar si la situación no lo justifica.
-</li>
-
-<li>
-Usar autos tuneados al máximo para romper la lógica del servidor.
-</li>
-
-<li>
-Hacer KOS a menos que esté declarado oficialmente.
-</li>
-
-<li>
-Vender droga en zonas seguras.
-</li>
-
-<li>
-Forzar rol, exigir cosas imposibles o manipular escenas.
-</li>
-
-<li>
-Desconectar para evitar arresto, muerte o consecuencias RP.
-</li>
-
-<li>
-Abusar de bugs, exploits, duplicaciones o zonas inaccesibles.
+Spam de robos.
 </li>
 
 </ul>
 
 </div>
 
-<div class="tipBox">
+</div>
+
+<!-- =====================================================
+VEHICULOS
+===================================================== -->
+
+<div class="conceptCard">
+
+<span class="conceptNumber">
+NOR 8
+</span>
+
+<h2>
+Vehículos
+</h2>
+
+<p>
+
+La conducción debe mantener
+coherencia RP.
+
+</p>
+
+<div class="conceptDivider"></div>
+
+<div class="conceptSection">
 
 <h3>
-💡 Sanciones
+✅ Correcto
 </h3>
 
 <ul>
 
 <li>
-Advertencia.
+Conducir coherentemente.
 </li>
 
 <li>
-Pérdida de armas o inventario.
+Respetar daños.
+</li>
+
+</ul>
+
+</div>
+
+<div class="conceptSection bad">
+
+<h3>
+❌ Incorrecto
+</h3>
+
+<ul>
+
+<li>
+Conducción arcade extrema.
 </li>
 
 <li>
-Suspensión del personaje.
+Usar vehículos como armas.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- =====================================================
+STAFF
+===================================================== -->
+
+<div class="conceptCard">
+
+<span class="conceptNumber">
+NOR 9
+</span>
+
+<h2>
+Staff
+</h2>
+
+<p>
+
+Las decisiones administrativas
+deben respetarse.
+
+</p>
+
+<div class="conceptDivider"></div>
+
+<div class="tipBox">
+
+<h3>
+💡 Importante
+</h3>
+
+<ul>
+
+<li>
+Los reportes deben hacerse con respeto.
 </li>
 
 <li>
-Expulsión de la banda.
+Mentir al staff agrava sanciones.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- =====================================================
+FAIRPLAY
+===================================================== -->
+
+<div class="conceptCard">
+
+<span class="conceptNumber">
+NOR 10
+</span>
+
+<h2>
+Fair Play
+</h2>
+
+<p>
+
+El objetivo es crear historias,
+no ganar siempre.
+
+</p>
+
+<div class="conceptDivider"></div>
+
+<div class="conceptSection">
+
+<h3>
+✅ Correcto
+</h3>
+
+<ul>
+
+<li>
+Aceptar derrotas RP.
 </li>
 
 <li>
-Ban temporal o permanente según la gravedad.
+Mantener escenas fluidas.
+</li>
+
+</ul>
+
+</div>
+
+<div class="conceptSection bad">
+
+<h3>
+❌ Incorrecto
+</h3>
+
+<ul>
+
+<li>
+Buscar solo ventaja.
+</li>
+
+<li>
+Romper rol por ganar.
 </li>
 
 </ul>
@@ -4746,8 +3967,6 @@ Ban temporal o permanente según la gravedad.
 </div>
 
 </div>
-
-
 
 <!-- =====================================================
 ZONAS SEGURAS
@@ -4770,7 +3989,6 @@ Zonas Seguras
 </p>
 
 <div class="conceptsGrid">
-
 
 <div class="conceptCard">
 
@@ -4810,8 +4028,6 @@ Rematar heridos.
 
 </div>
 
-
-
 <div class="conceptCard">
 
 <span class="conceptNumber">
@@ -4849,8 +4065,6 @@ Provocar DM.
 </div>
 
 </div>
-
-
 
 <div class="conceptCard">
 
@@ -4896,33 +4110,9 @@ Robar nuevos jugadores.
 
 </div>
 
-
-
 <!-- =====================================================
 CIERRE PAGES SYSTEM
 ===================================================== -->
-
-</div>
-
-
-
-<!-- =====================================================
-MODAL NORMATIVAS — SECCIÓN INDIVIDUAL
-===================================================== -->
-
-<div class="normModal" id="normModal" aria-hidden="true">
-
-    <div class="normModalBackdrop" data-norm-close></div>
-
-    <div class="normModalBox" role="dialog" aria-modal="true" aria-label="Normativa seleccionada">
-
-        <button class="normModalClose" type="button" data-norm-close aria-label="Cerrar normativa">
-            ×
-        </button>
-
-        <div class="normModalBody" id="normModalBody"></div>
-
-    </div>
 
 </div>
 
@@ -5035,84 +4225,6 @@ subBtns.forEach(btn => {
         .classList.add('active');
 
     });
-
-});
-
-
-
-/* =========================================================
-NORMATIVAS COMPACTAS + MODAL DIFUMINADO
-========================================================= */
-
-const normCards =
-document.querySelectorAll('#normasPage .compactNormas .conceptCard');
-
-const normModal =
-document.getElementById('normModal');
-
-const normModalBody =
-document.getElementById('normModalBody');
-
-function openNormModal(card){
-
-    if(!normModal || !normModalBody) return;
-
-    const clone =
-    card.cloneNode(true);
-
-    clone.removeAttribute('tabindex');
-    clone.removeAttribute('role');
-
-    normModalBody.innerHTML = '';
-    normModalBody.appendChild(clone);
-
-    normModal.classList.add('active');
-    normModal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('normModalOpen');
-}
-
-function closeNormModal(){
-
-    if(!normModal) return;
-
-    normModal.classList.remove('active');
-    normModal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('normModalOpen');
-}
-
-normCards.forEach(card => {
-
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'button');
-
-    card.addEventListener('click', () => {
-        openNormModal(card);
-    });
-
-    card.addEventListener('keydown', (event) => {
-
-        if(event.key === 'Enter' || event.key === ' '){
-            event.preventDefault();
-            openNormModal(card);
-        }
-
-    });
-
-});
-
-document
-.querySelectorAll('[data-norm-close]')
-.forEach(btn => {
-
-    btn.addEventListener('click', closeNormModal);
-
-});
-
-document.addEventListener('keydown', (event) => {
-
-    if(event.key === 'Escape'){
-        closeNormModal();
-    }
 
 });
 
