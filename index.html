@@ -2044,6 +2044,13 @@ CARD REVEAL
         min-height:245px;
     }
 }
+
+
+/* Bloquea el scroll del fondo cuando el modal está abierto */
+body.normModalOpen{
+    overflow:hidden;
+}
+
 </style>
 
 </head>
@@ -2464,7 +2471,6 @@ NVVPJ
 
 <div class="subContent" id="nvvpj">
 
-```
 <div class="subContentCard">
 
     <div class="subHeader">
@@ -2605,7 +2611,6 @@ NVVPJ
     </div>
 
 </div>
-```
 
 </div>
 
@@ -2615,7 +2620,6 @@ DMVDM
 
 <div class="subContent" id="dmvdm">
 
-```
 <div class="subContentCard">
 
     <div class="subHeader">
@@ -2756,7 +2760,6 @@ DMVDM
     </div>
 
 </div>
-```
 
 </div>
 
@@ -2766,7 +2769,6 @@ RK
 
 <div class="subContent" id="rk">
 
-```
 <div class="subContentCard">
 
     <div class="subHeader">
@@ -2907,7 +2909,6 @@ RK
     </div>
 
 </div>
-```
 
 </div>
 
@@ -2917,7 +2918,6 @@ PK
 
 <div class="subContent" id="pk">
 
-```
 <div class="subContentCard">
 
     <div class="subHeader">
@@ -3058,7 +3058,6 @@ PK
     </div>
 
 </div>
-```
 
 </div>
 
@@ -3068,7 +3067,6 @@ CK
 
 <div class="subContent" id="ck">
 
-```
 <div class="subContentCard">
 
     <div class="subHeader">
@@ -3209,7 +3207,6 @@ CK
     </div>
 
 </div>
-```
 
 </div>
 
@@ -3219,7 +3216,6 @@ FAIRPLAY
 
 <div class="subContent" id="fairplay">
 
-```
 <div class="subContentCard">
 
     <div class="subHeader">
@@ -3360,7 +3356,6 @@ FAIRPLAY
     </div>
 
 </div>
-```
 
 </div>
 
@@ -3370,7 +3365,6 @@ DO
 
 <div class="subContent" id="do">
 
-```
 <div class="subContentCard">
 
     <div class="subHeader">
@@ -3511,7 +3505,6 @@ DO
     </div>
 
 </div>
-```
 
 </div>
 
@@ -5348,7 +5341,7 @@ CIERRE PAGES SYSTEM
 
     <div class="normModalBox">
 
-        <button class="normModalClose" id="normModalClose">
+        <button class="normModalClose" id="normModalClose" type="button">
             ×
         </button>
 
@@ -5470,6 +5463,102 @@ subBtns.forEach(btn => {
     });
 
 });
+
+
+
+/* =========================================================
+🔥 CLICK EN NORMATIVAS - MODAL CENTRAL
+========================================================= */
+
+const normCards =
+document.querySelectorAll('#normasPage .conceptCard');
+
+const normModalOverlay =
+document.getElementById('normModalOverlay');
+
+const normModalContent =
+document.getElementById('normModalContent');
+
+const normModalClose =
+document.getElementById('normModalClose');
+
+
+if(normCards.length && normModalOverlay && normModalContent && normModalClose){
+
+    normCards.forEach(card => {
+
+        /* Agrega CLICK PARA ABRIR si la norma no lo tiene */
+        if(!card.querySelector('.normOpenHint')){
+
+            const hint =
+            document.createElement('span');
+
+            hint.className =
+            'normOpenHint';
+
+            hint.textContent =
+            'CLICK PARA ABRIR';
+
+            card.appendChild(hint);
+        }
+
+        card.addEventListener('click', () => {
+
+            const clone =
+            card.cloneNode(true);
+
+            clone
+            .querySelectorAll('.normOpenHint')
+            .forEach(el => el.remove());
+
+            normModalContent.innerHTML = '';
+
+            normModalContent.appendChild(clone);
+
+            normModalOverlay.classList.add('active');
+
+            document.body.classList.add('normModalOpen');
+        });
+
+    });
+
+
+    function closeNormModal(){
+
+        normModalOverlay.classList.remove('active');
+
+        document.body.classList.remove('normModalOpen');
+
+        setTimeout(() => {
+
+            normModalContent.innerHTML = '';
+
+        }, 250);
+    }
+
+
+    normModalClose.addEventListener('click', closeNormModal);
+
+
+    normModalOverlay.addEventListener('click', (e) => {
+
+        if(e.target === normModalOverlay){
+
+            closeNormModal();
+        }
+
+    });
+
+
+    document.addEventListener('keydown', (e) => {
+
+        if(e.key === 'Escape'){
+
+            closeNormModal();
+        }
+
+    });
+}
 
 </script>
 
